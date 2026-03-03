@@ -3,10 +3,16 @@
    Stylesheet v2.0 — Tema Claro
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
 
 /* ============ VARIÁVEIS CSS ============ */
 :root {
+  /* Gradientes */
+    --gradiente-azul: linear-gradient(
+    90deg, #0a76f1, #053b6e
+  );
+
+
   /* — Cores de fundo — */
   --cor-fundo:              #F7F9FD;
   --cor-fundo-alternativo:  #EEF3FB;
@@ -24,6 +30,8 @@
   --texto-corpo:            #374151;
   --texto-secundario:       #6B7280;
   --texto-claro:            #94A3B8;
+  --texto-branco:           #ffffff;
+  --texto-preto:            #000000;
 
   /* — Bordas — */
   --borda:                  rgba(0, 0, 0, 0.08);
@@ -37,6 +45,7 @@
 
   /* — Tipografia — */
   --fonte-titulo:           'Poppins', sans-serif;
+  --fonte-syne:             'Syne', sans-serif;
   --fonte-corpo:            'Plus Jakarta Sans', sans-serif;
   --fonte-mono:             'JetBrains Mono', monospace;
 
@@ -210,20 +219,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-logo {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   line-height: 1;
 }
 .nav-logo .logo-principal {
-  font-family: var(--fonte-titulo);
+  font-family: var(--fonte-syne);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: var(--texto-escuro);
   letter-spacing: -0.02em;
 }
 .nav-logo .logo-subtitulo {
+  display: inline-block;
+  max-width: 180px;
+
   font-family: var(--fonte-mono);
-  font-size: 9px;
+  font-size: 0.64rem;
+  padding: 0 0 0 5px;
   letter-spacing: 0.18em;
   color: var(--azul-destaque);
   text-transform: uppercase;
@@ -532,14 +545,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 36px 0;
   border-top: 1px solid var(--borda);
   border-bottom: 1px solid var(--borda);
-  background: var(--cor-fundo-cartao);
+  background: var(--gradiente-azul);
 }
 .clientes-rotulo {
   font-family: var(--fonte-mono);
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--texto-secundario);
+  color: var(--texto-branco);
   text-align: center;
   margin-bottom: 24px;
 }
@@ -554,7 +567,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--fonte-mono);
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: var(--texto-secundario);
+  color: var(--texto-branco);
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -620,7 +633,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sobre-cartao-cabecalho {
   display: flex; align-items: center; gap: 16px;
-  margin-bottom: 28px; padding-bottom: 24px;
+  margin-bottom: 10px; padding-bottom: 10px;
   border-bottom: 1px solid var(--borda);
 }
 .sobre-avatar {
@@ -635,8 +648,11 @@ h1, h2, h3, h4, h5, h6 {
 .sobre-nome { font-family: var(--fonte-titulo); font-size: 1rem; font-weight: 700; color: var(--texto-escuro); }
 .sobre-funcao { font-size: 0.8rem; color: var(--texto-secundario); margin-top: 2px; }
 .sobre-citacao {
-  font-size: 1rem; color: var(--texto-corpo);
-  line-height: 1.75; font-style: italic; font-weight: 400;
+  font-size: 1rem;
+  color: var(--texto-corpo);
+  line-height: 1.75;
+  font-style: italic;
+  font-weight: 400;
 }
 .sobre-citacao strong { font-style: normal; color: var(--azul-destaque); font-weight: 600; }
 .sobre-numeros {
@@ -687,6 +703,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   transition: var(--transicao);
+
 }
 .grade-celula::before {
   content: '';
