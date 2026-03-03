@@ -548,32 +548,42 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--gradiente-azul);
 }
 .clientes-rotulo {
-  font-family: var(--fonte-mono);
-  font-size: 10px;
+  font-family: var(--fonte-titulo);
+  font-size: 12px;
+  font-weight: bold;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--texto-branco);
+  /* text-transform: uppercase; */
+  color: var(--azul-principal);
   text-align: center;
-  margin-bottom: 24px;
+
+  margin-bottom: 18px;
+  padding: 10px 20px;
+
+  background-color: var(--cor-fundo-cartao);
+  border-radius: 15px;
 }
 .clientes-faixa {
   display: flex;
-  gap: 48px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 .cliente-item {
   font-family: var(--fonte-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   color: var(--texto-branco);
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 .cliente-item::before { content: '▪'; font-size: 8px; color: var(--azul-principal); }
+.cliente-divisor {
+  font-size: 12px;
+  color: var(--texto-branco);
+}
+
 
 /* ===== SOBRE ===== */
 #sobre {
