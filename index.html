@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIE · Núcleo de Inteligência Eleitoral | Transformando dados em votos</title>
+  <meta name="description" content="O NIE transforma dados públicos em vantagem eleitoral competitiva. Geointeligência, modelagem preditiva e estratégia territorial para campanhas e mandatos no Brasil." />
+  <meta name="keywords" content="inteligência eleitoral, consultoria política, dados eleitorais, TSE, geointeligência, estratégia de campanha, NIE, Vinicius Soares Castro" />
+  <meta name="author" content="NIE · Núcleo de Inteligência Eleitoral · by VSC" />
+  <meta property="og:title" content="NIE · Núcleo de Inteligência Eleitoral" />
+  <meta property="og:description" content="Transformando dados em votos. Inteligência eleitoral baseada em dados públicos, georreferenciamento e modelagem preditiva." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://nie.com.br" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="NIE Home">
+        <span class="logo-main">NIE</span>
+        <span class="logo-sub">Núcleo de Inteligência Eleitoral</span>
+      </a>
+      <div class="nav-links" role="navigation" aria-label="Menu principal">
+        <a href="#about">Sobre</a>
+        <a href="#methodology">Metodologia</a>
+        <a href="#services">Serviços</a>
+        <a href="#personas">Clientes</a>
+        <a href="#contact">Contato</a>
+      </div>
+      <a href="#contact" class="btn-primary nav-cta">Fale com o NIE →</a>
+      <button class="nav-hamburger" aria-label="Menu mobile" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav-mobile" aria-label="Menu mobile">
+      <a href="#about">Sobre</a>
+      <a href="#methodology">Metodologia</a>
+      <a href="#services">Serviços</a>
+      <a href="#personas">Clientes</a>
+      <a href="#contact">Contato</a>
+      <a href="#contact" class="btn-primary">Fale com o NIE →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Apresentação">
+  <div class="bg-grid"></div>
+  <div class="bg-glow hero-glow-1"></div>
+  <div class="bg-glow hero-glow-2"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <!-- Text -->
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-dot"></div>
+          <span class="hero-eyebrow-text">Inteligência Eleitoral · by VSC · Brasil 2025</span>
+        </div>
+
+        <h1 class="hero-title">
+          Transformando<br>
+          <em>dados</em> em<br>
+          votos reais.
+        </h1>
+
+        <p class="hero-description">
+          O NIE é o núcleo de referência em inteligência eleitoral do Brasil.
+          Substituímos o achismo por evidência — decisões orientadas por
+          dados territoriais, comportamentais e preditivos.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Solicitar diagnóstico →</a>
+          <a href="#methodology" class="btn-secondary">Como funciona</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value"><span data-count="500" data-suffix="k+">0</span></div>
+            <div class="hero-stat-label">Candidatos/ciclo</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value"><span data-count="57" data-suffix="mil">0</span></div>
+            <div class="hero-stat-label">Vereadores eleitos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value"><span data-count="12" data-suffix="">0</span></div>
+            <div class="hero-stat-label">Produtos NIE</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Card -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="hero-card-title">Análise Territorial</span>
+            <div class="live-badge">
+              <div class="live-dot"></div>
+              AO VIVO
+            </div>
+          </div>
+
+          <div class="territory-bars">
+            <div class="territory-item">
+              <div class="territory-header">
+                <span class="territory-label">Zona de Domínio</span>
+                <span class="territory-pct c1">68%</span>
+              </div>
+              <div class="territory-track">
+                <div class="territory-fill c1" data-width="68%"></div>
+              </div>
+            </div>
+            <div class="territory-item">
+              <div class="territory-header">
+                <span class="territory-label">Zona de Disputa</span>
+                <span class="territory-pct c2">41%</span>
+              </div>
+              <div class="territory-track">
+                <div class="territory-fill c2" data-width="41%"></div>
+              </div>
+            </div>
+            <div class="territory-item">
+              <div class="territory-header">
+                <span class="territory-label">Potencial Expansão</span>
+                <span class="territory-pct c3">23%</span>
+              </div>
+              <div class="territory-track">
+                <div class="territory-fill c3" data-width="23%"></div>
+              </div>
+            </div>
+            <div class="territory-item">
+              <div class="territory-header">
+                <span class="territory-label">Território Abandonado</span>
+                <span class="territory-pct c4">12%</span>
+              </div>
+              <div class="territory-track">
+                <div class="territory-fill c4" data-width="12%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-metrics">
+            <div class="card-metric">
+              <div class="card-metric-val">+14%</div>
+              <div class="card-metric-lbl">Crescimento projetado</div>
+            </div>
+            <div class="card-metric">
+              <div class="card-metric-val">847</div>
+              <div class="card-metric-lbl">Seções mapeadas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-card float-card-1">
+          <div class="float-lbl">IVE Score</div>
+          <div class="float-val green">0.73 ↑</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="float-lbl">Clusters GRID™</div>
+          <div class="float-val blue">6 perfis</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLIENTS STRIP ===== -->
+<section id="clients" aria-label="Segmentos atendidos">
+  <div class="container">
+    <p class="clients-lbl">Atendemos candidatos de todos os espectros com o mesmo rigor técnico</p>
+    <div class="clients-track">
+      <div class="client-item">Vereadores</div>
+      <div class="client-item">Prefeitos</div>
+      <div class="client-item">Deputados Estaduais</div>
+      <div class="client-item">Deputados Federais</div>
+      <div class="client-item">Senadores</div>
+      <div class="client-item">Governadores</div>
+      <div class="client-item">Chapas Partidárias</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" aria-label="Sobre o NIE">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-text">
+        <span class="tag reveal">Sobre o NIE</span>
+        <h2 class="section-title reveal reveal-delay-1">
+          Onde o território<br>fala, nós traduzimos.
+        </h2>
+        <p class="reveal reveal-delay-2">
+          A maioria das campanhas brasileiras ainda opera no modelo de
+          <strong>intuição + panfletagem + cabo eleitoral</strong>. O NIE existe para mudar isso.
+          Somos um núcleo especializado que substitui o achismo por evidência — decisões
+          orientadas por dados territoriais e comportamentais verificáveis.
+        </p>
+        <p class="reveal reveal-delay-2">
+          Fundado por Vinicius Soares Castro, o NIE combina ciência de dados,
+          geointeligência e estratégia política para entregar vantagem competitiva real
+          em campanhas e mandatos em todo o Brasil.
+        </p>
+
+        <div class="about-values reveal reveal-delay-3">
+          <div class="value-item">
+            <div class="value-icon">🗺️</div>
+            <div class="value-name">Território</div>
+            <div class="value-desc">O voto mora num lugar. Toda análise parte do dado georreferenciado.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">📊</div>
+            <div class="value-name">Evidência</div>
+            <div class="value-desc">Nenhuma decisão sem dado. Recomendações sempre sustentadas em fontes verificáveis.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🎯</div>
+            <div class="value-name">Precisão</div>
+            <div class="value-desc">Modelos com intervalo de confiança explicitado. Cada ponto percentual importa.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🔄</div>
+            <div class="value-name">Ciclo</div>
+            <div class="value-desc">Campanha e mandato são contínuos. Atuamos da pré-campanha à gestão do mandato.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🔍</div>
+            <div class="value-name">Transparência</div>
+            <div class="value-desc">Método aberto, resultado claro. Clientes entendem a metodologia.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">⚖️</div>
+            <div class="value-name">Imparcialidade</div>
+            <div class="value-desc">Dados não têm partido. Atendemos diferentes espectros com o mesmo rigor.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal reveal-delay-2">
+        <div class="about-main-card">
+          <div class="about-card-head">
+            <div class="about-avatar">VSC</div>
+            <div>
+              <div class="about-card-name">Vinicius Soares Castro</div>
+              <div class="about-card-role">Fundador · NIE · Inteligência Eleitoral</div>
+            </div>
+          </div>
+          <p class="about-quote">
+            "Nossa missão é tornar a <strong>decisão política tão precisa quanto uma ciência</strong>.
+            Cada território tem uma história nos dados — nossa função é lê-la
+            antes do adversário."
+          </p>
+          <div class="about-nums">
+            <div class="about-num">
+              <div class="about-num-val" data-count="75" data-suffix="k">0</div>
+              <div class="about-num-lbl">Clientes potenciais/ciclo</div>
+            </div>
+            <div class="about-num">
+              <div class="about-num-val" data-count="5" data-suffix="">0</div>
+              <div class="about-num-lbl">Linhas de produto</div>
+            </div>
+            <div class="about-num">
+              <div class="about-num-val" data-count="100" data-suffix="%">0</div>
+              <div class="about-num-lbl">Dados públicos LGPD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHODOLOGY ===== -->
+<section id="methodology" aria-label="Metodologia GRID">
+  <div class="container">
+    <div class="method-intro">
+      <span class="tag reveal">Metodologia</span>
+      <h2 class="section-title reveal reveal-delay-1">Framework GRID™</h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        O ativo metodológico central do NIE. Presente em todos os produtos e entregas,
+        garante consistência analítica em quatro dimensões indispensáveis.
+      </p>
+    </div>
+
+    <div class="grid-fw reveal">
+      <div class="grid-cell">
+        <div class="grid-letter">G</div>
+        <div class="grid-dim">Georreferenciamento</div>
+        <div class="grid-q">Onde está o voto?</div>
+        <div class="grid-desc">Mapas eleitorais por zona, seção e bairro com dados históricos sobrepostos. Precisão até o nível de quadra.</div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-letter">R</div>
+        <div class="grid-dim">Recorrência</div>
+        <div class="grid-q">Quem vota sempre?</div>
+        <div class="grid-desc">Índice de fidelidade eleitoral e identificação de eleitores voláteis por cluster. Base sólida vs. margem conquistável.</div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-letter">I</div>
+        <div class="grid-dim">Interesses</div>
+        <div class="grid-q">O que move cada cluster?</div>
+        <div class="grid-desc">Temas-gatilho, demandas e perfis comportamentais por segmento. A mensagem certa para o público certo.</div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-letter">D</div>
+        <div class="grid-dim">Decisão</div>
+        <div class="grid-q">Onde concentrar esforço?</div>
+        <div class="grid-desc">Priorização territorial com base em ROI político. Dados, não intuição — aloca tempo, equipe e verba com eficiência.</div>
+      </div>
+    </div>
+
+    <!-- PDCA -->
+    <div class="pdca-sect">
+      <div class="pdca-head">
+        <div>
+          <span class="tag">Para clientes de mandato</span>
+          <h3 class="section-title reveal reveal-delay-1" style="font-size:1.8rem;margin-top:12px;">Ciclo PDCA Político</h3>
+        </div>
+        <p class="section-subtitle" style="margin-top:0;max-width:380px;">Gestão contínua do capital político do parlamentar, do primeiro dia do mandato ao próximo ciclo eleitoral.</p>
+      </div>
+      <div class="pdca-grid">
+        <div class="pdca-card reveal">
+          <div class="pdca-phase">PLAN · Planejar</div>
+          <div class="pdca-action">Diagnóstico Territorial</div>
+          <div class="pdca-desc">Definição de agenda de mandato e metas de capital político com base nos dados do território. Produtos: NIE-01, NIE-03, SIM Módulo 4.</div>
+        </div>
+        <div class="pdca-card reveal reveal-delay-1">
+          <div class="pdca-phase">DO · Executar</div>
+          <div class="pdca-action">Ações Orientadas</div>
+          <div class="pdca-desc">Ações legislativas, projetos de base e comunicação territorial orientada por dados. Produtos: NIE-07, NIE-10.</div>
+        </div>
+        <div class="pdca-card reveal reveal-delay-2">
+          <div class="pdca-phase">CHECK · Monitorar</div>
+          <div class="pdca-action">Score de Aprovação</div>
+          <div class="pdca-desc">Acompanhamento de percepção, score de aprovação e indicadores de entrega por território. Produtos: SIM, NIE-06, NIE-08.</div>
+        </div>
+        <div class="pdca-card reveal reveal-delay-3">
+          <div class="pdca-phase">ACT · Ajustar</div>
+          <div class="pdca-action">Reposicionamento</div>
+          <div class="pdca-desc">Reposicionamento de narrativa, redistribuição de esforço e ajuste de estratégia. Produtos: SIM Módulo 4, Mentoria NIE-12.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" aria-label="Portfólio de serviços">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="tag reveal">Portfólio</span>
+        <h2 class="section-title reveal reveal-delay-1">Produtos &amp; Serviços</h2>
+        <p class="section-subtitle reveal reveal-delay-2">12 produtos organizados em 5 linhas estratégicas, cobrindo todo o ciclo político: pré-campanha, campanha, mandato e formação.</p>
+      </div>
+      <a href="#contact" class="btn-secondary reveal reveal-delay-2">Solicitar proposta →</a>
+    </div>
+
+    <!-- Linha 1 -->
+    <div class="service-line reveal">
+      <div class="svc-line-head">
+        <span class="svc-line-num">01</span>
+        <span class="svc-line-name">Diagnóstico e Inteligência Territorial</span>
+        <div class="svc-line-rule"></div>
+      </div>
+      <div class="svc-cards">
+        <div class="svc-card">
+          <div class="svc-id">NIE-01</div>
+          <div class="svc-name">Diagnóstico Territorial Completo</div>
+          <div class="svc-desc">Análise histórica e georreferenciada do território eleitoral. Mapeia zonas de domínio, disputa e territórios abandonados com base em resultados das últimas 3 eleições do TSE.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 4–5 semanas</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-02</div>
+          <div class="svc-name">Mapeamento de Força Concorrencial</div>
+          <div class="svc-desc">Análise da força eleitoral dos principais concorrentes por território. Identifica vulnerabilidades e janelas de migração de votos dos adversários.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 3–4 semanas</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-03</div>
+          <div class="svc-name">Análise de Demandas Territoriais</div>
+          <div class="svc-desc">Cruzamento de dados públicos de saúde, infraestrutura, segurança e renda por território. Orienta pauta de campanha e agenda de mandato com dados do IBGE e DATASUS.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 4–6 semanas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha 2 -->
+    <div class="service-line reveal">
+      <div class="svc-line-head">
+        <span class="svc-line-num">02</span>
+        <span class="svc-line-name">Segmentação e Modelagem Eleitoral</span>
+        <div class="svc-line-rule"></div>
+      </div>
+      <div class="svc-cards">
+        <div class="svc-card">
+          <div class="svc-id">NIE-04</div>
+          <div class="svc-name">Segmentação Eleitoral GRID™</div>
+          <div class="svc-desc">Clusterização do eleitorado por perfil comportamental. Define de 4 a 8 personas eleitorais reais com seus temas-gatilho e canais de comunicação preferidos.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 5–7 semanas</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-05</div>
+          <div class="svc-name">Modelo Preditivo de Votação</div>
+          <div class="svc-desc">Projeção quantitativa do desempenho eleitoral por zona, com regressão histórica. Simula cenários de aliança, coligações e análise de segundo turno.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 7–10 semanas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha 3 -->
+    <div class="service-line reveal">
+      <div class="svc-line-head">
+        <span class="svc-line-num">03</span>
+        <span class="svc-line-name">Operações de Campanha</span>
+        <div class="svc-line-rule"></div>
+      </div>
+      <div class="svc-cards">
+        <div class="svc-card">
+          <div class="svc-id">NIE-06</div>
+          <div class="svc-name">Painel Operacional de Campanha</div>
+          <div class="svc-desc">Dashboard de monitoramento em tempo real. Integra dados de redes sociais, sentimento e alertas de movimentação competitiva georreferenciados.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Retainer mensal</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-07</div>
+          <div class="svc-name">Plano de Ativação Territorial</div>
+          <div class="svc-desc">Estratégia de ação territorial: onde fazer corpo a corpo, eventos, panfletagem e como distribuir o tempo do candidato por território com ROI eleitoral.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 4–5 semanas</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-08</div>
+          <div class="svc-name">Monitoramento de Sentimento Digital</div>
+          <div class="svc-desc">Monitoramento contínuo da presença digital do candidato e concorrentes. Análise de menções, engajamento e sentimento nas principais redes sociais.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Retainer mensal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha 4 -->
+    <div class="service-line reveal">
+      <div class="svc-line-head">
+        <span class="svc-line-num">04</span>
+        <span class="svc-line-name">Inteligência de Mandato</span>
+        <div class="svc-line-rule"></div>
+      </div>
+      <div class="svc-cards">
+        <div class="svc-card">
+          <div class="svc-id">NIE-09</div>
+          <div class="svc-name">Sistema de Inteligência de Mandato (SIM)</div>
+          <div class="svc-desc">Plataforma contínua de monitoramento do capital político: mapa de demandas territoriais, score de aprovação por zona e planejamento antecipado de reeleição.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Retainer anual</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-10</div>
+          <div class="svc-name">Análise de Impacto de Emendas</div>
+          <div class="svc-desc">Especializado para parlamentares com poder de emenda. Analisa onde emendas terão maior impacto eleitoral e social, maximizando o retorno político do investimento público.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Prazo: 5–8 semanas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha 5 -->
+    <div class="service-line reveal">
+      <div class="svc-line-head">
+        <span class="svc-line-num">05</span>
+        <span class="svc-line-name">Formação e Capacitação</span>
+        <div class="svc-line-rule"></div>
+      </div>
+      <div class="svc-cards">
+        <div class="svc-card">
+          <div class="svc-id">NIE-11</div>
+          <div class="svc-name">Workshop: Inteligência Eleitoral para Equipes</div>
+          <div class="svc-desc">Treinamento intensivo de 8h para coordenadores e assessores. Aborda leitura de dados TSE, mapas eleitorais, segmentação e planejamento territorial.</div>
+          <div class="svc-footer">
+            <span class="svc-time">1 dia · Online ou Presencial</span>
+          </div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-id">NIE-12</div>
+          <div class="svc-name">Mentoria Estratégica Individual</div>
+          <div class="svc-desc">Programa de mentoria direta com Vinicius Soares Castro. Sessões quinzenais de 90 min com acompanhamento de casos reais e biblioteca de templates NIE.</div>
+          <div class="svc-footer">
+            <span class="svc-time">Retainer trimestral</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== DIFFERENTIALS ===== -->
+<section id="differentials" aria-label="Diferenciais competitivos">
+  <div class="container">
+    <div class="diff-wrap">
+
+      <div class="diff-sticky">
+        <span class="tag reveal">Diferenciais</span>
+        <h2 class="section-title reveal reveal-delay-1" style="margin-top:14px;">
+          Seu adversário<br>ainda usa<br>intuição.
+        </h2>
+        <p class="section-subtitle reveal reveal-delay-2">
+          O NIE entrega o que o mercado não consegue: inteligência territorial
+          precisa, contínua e baseada em dados públicos verificáveis.
+        </p>
+        <a href="#contact" class="btn-primary reveal reveal-delay-3" style="margin-top:32px;display:inline-flex;">
+          Comece agora →
+        </a>
+      </div>
+
+      <div class="diff-table reveal reveal-delay-1">
+        <div class="diff-row h-row">
+          <div class="diff-cell h">Eixo</div>
+          <div class="diff-cell h">Mercado convencional</div>
+          <div class="diff-cell h">NIE entrega</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Diagnóstico</div>
+          <div class="diff-cell mkt">Pesquisa de opinião pontual</div>
+          <div class="diff-cell nie">Monitoramento territorial contínuo</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Estratégia</div>
+          <div class="diff-cell mkt">Consultoria baseada em experiência</div>
+          <div class="diff-cell nie">Decisões orientadas por modelo preditivo</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Território</div>
+          <div class="diff-cell mkt">Análise agregada por município</div>
+          <div class="diff-cell nie">Geointeligência por zona, seção e bairro</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Mandato</div>
+          <div class="diff-cell mkt">Abandono pós-eleição</div>
+          <div class="diff-cell nie">Inteligência de gestão e planejamento de reeleição</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Segmentação</div>
+          <div class="diff-cell mkt">Públicos genéricos por faixa etária</div>
+          <div class="diff-cell nie">Clusters comportamentais com temas-gatilho</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Dados</div>
+          <div class="diff-cell mkt">Pesquisas contratadas com alto custo</div>
+          <div class="diff-cell nie">Dados públicos TSE + IBGE + fontes abertas</div>
+        </div>
+        <div class="diff-row">
+          <div class="diff-cell axis">Conformidade</div>
+          <div class="diff-cell mkt">Risco legal de uso de dados pessoais</div>
+          <div class="diff-cell nie">100% LGPD — só dados públicos</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PACKAGES CTA ===== -->
+<section id="packages" aria-label="Pacotes de campanha">
+  <div class="container">
+    <div class="pricing-intro">
+      <span class="tag reveal">Pacotes</span>
+      <h2 class="section-title reveal reveal-delay-1">Encontre o pacote certo para seu momento</h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        Cada candidatura tem sua escala, território e desafio. O NIE oferece pacotes
+        sob medida — os valores são definidos após análise do seu cenário específico.
+        Entre em contato e receba uma proposta personalizada.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="p-card reveal">
+        <div class="p-badge">Municipal</div>
+        <div class="p-name">Pacote Essencial</div>
+        <div class="p-desc">Para vereadores e candidatos municipais em pré-campanha. Diagnóstico territorial com foco e clareza.</div>
+        <div class="p-features">
+          <div class="p-feature">NIE-01 · Diagnóstico Territorial Completo</div>
+          <div class="p-feature">NIE-02 · Mapeamento de Força Concorrencial</div>
+          <div class="p-feature">Apresentação executiva dos resultados</div>
+          <div class="p-feature">1 reunião estratégica de alinhamento</div>
+        </div>
+        <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Solicitar proposta →</a>
+      </div>
+
+      <div class="p-card featured reveal reveal-delay-1">
+        <div class="p-badge">Mais completo</div>
+        <div class="p-name">Campanha Municipal</div>
+        <div class="p-desc">Para prefeitos e disputas majoritárias. Estratégia completa com painel operacional e ativação territorial.</div>
+        <div class="p-features">
+          <div class="p-feature">NIE-01 + NIE-02 · Diagnóstico completo</div>
+          <div class="p-feature">NIE-03 · Análise de Demandas Territoriais</div>
+          <div class="p-feature">NIE-04 · Segmentação Eleitoral GRID™</div>
+          <div class="p-feature">NIE-07 · Plano de Ativação Territorial</div>
+          <div class="p-feature">NIE-06 · Painel Operacional (3 meses)</div>
+        </div>
+        <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;">Solicitar proposta →</a>
+      </div>
+
+      <div class="p-card reveal reveal-delay-2">
+        <div class="p-badge">Estadual / Federal</div>
+        <div class="p-name">Campanha Ampliada</div>
+        <div class="p-desc">Para deputados e senadores. Inteligência completa com modelo preditivo e monitoramento digital.</div>
+        <div class="p-features">
+          <div class="p-feature">NIE-01 ao 04 · Diagnóstico completo estadual</div>
+          <div class="p-feature">NIE-05 · Modelo Preditivo de Votação</div>
+          <div class="p-feature">NIE-06 · Painel Operacional (6 meses)</div>
+          <div class="p-feature">NIE-08 · Sentimento Digital (6 meses)</div>
+          <div class="p-feature">Análise de segundo turno e coligações</div>
+        </div>
+        <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Solicitar proposta →</a>
+      </div>
+    </div>
+
+    <!-- Retainer modalities -->
+    <div class="retainer-block reveal">
+      <div class="retainer-title">Retainers de Inteligência Contínua</div>
+      <div class="retainer-table">
+        <div class="r-cell rh">
+          <div class="r-name">Modalidade</div>
+          <div class="r-price" style="color:var(--text-light);font-size:0.8rem;font-family:var(--font-body);font-weight:400;">Contratos mensais recorrentes para mandatos em exercício e campanhas de longo prazo</div>
+        </div>
+        <div class="r-cell">
+          <div class="r-name">Básico</div>
+          <div class="r-price" style="color:var(--text-light);font-size:0.8rem;font-family:var(--font-body);">Monitoramento digital + relatório mensal</div>
+        </div>
+        <div class="r-cell">
+          <div class="r-name">Intermediário</div>
+          <div class="r-price" style="color:var(--text-light);font-size:0.8rem;font-family:var(--font-body);">SIM módulos 1–2 + reunião quinzenal</div>
+        </div>
+        <div class="r-cell">
+          <div class="r-name">Premium (SIM)</div>
+          <div class="r-price" style="color:var(--text-light);font-size:0.8rem;font-family:var(--font-body);">SIM completo + radar de oposição + mentoria</div>
+        </div>
+        <div class="r-cell">
+          <div class="r-name">Campanha Ativa</div>
+          <div class="r-price" style="color:var(--text-light);font-size:0.8rem;font-family:var(--font-body);">Painel operacional + sentimento digital</div>
+        </div>
+        <div class="r-cell">
+          <div class="r-name">Assessoria</div>
+          <div class="r-price" style="color:var(--text-light);font-size:0.8rem;font-family:var(--font-body);">Mentoria + revisão de análises + suporte</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:48px;padding:40px;background:rgba(24,82,200,0.07);border:1px solid rgba(46,124,246,0.2);border-radius:16px;">
+      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--vivid);margin-bottom:12px;">Proposta personalizada</p>
+      <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;margin-bottom:12px;">Os valores são definidos após análise do seu cenário.</h3>
+      <p style="color:var(--text-light);max-width:560px;margin:0 auto 28px;font-weight:300;line-height:1.75;">Cada candidatura é única. Entre em contato para receber uma proposta sob medida para o seu território, cargo e momento político.</p>
+      <a href="#contact" class="btn-primary" style="display:inline-flex;">Solicitar proposta agora →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PERSONAS ===== -->
+<section id="personas" aria-label="Perfis de clientes">
+  <div class="container">
+    <div class="personas-intro">
+      <span class="tag reveal">Nossos Clientes</span>
+      <h2 class="section-title reveal reveal-delay-1">Para quem é o NIE?</h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        Atendemos políticos, coordenadores e assessores em todo o ciclo — da pré-campanha
+        ao exercício do mandato.
+      </p>
+    </div>
+
+    <div class="personas-grid">
+      <div class="pers-card reveal">
+        <div class="pers-head">
+          <div class="pers-avatar" style="background:linear-gradient(135deg,#1e3a8a,#1852C8);">CD</div>
+          <div>
+            <div class="pers-name">Vereador · Reeleição</div>
+            <div class="pers-role">Município médio · 150k–300k hab.</div>
+          </div>
+        </div>
+        <p class="pers-quote">"Sei que fiz um bom mandato. Preciso provar isso com números e saber onde focar."</p>
+        <div class="pers-budget">Produto recomendado: NIE-01 + GRID™</div>
+      </div>
+      <div class="pers-card reveal reveal-delay-1">
+        <div class="pers-head">
+          <div class="pers-avatar" style="background:linear-gradient(135deg,#1e40af,#2E7CF6);">RS</div>
+          <div>
+            <div class="pers-name">Candidata a Deputada</div>
+            <div class="pers-role">1ª candidatura federal · Capital estadual</div>
+          </div>
+        </div>
+        <p class="pers-quote">"Tenho energia, tenho pauta, tenho base. O que me falta é a bússola para saber onde ir."</p>
+        <div class="pers-budget">Produto recomendado: Territorial + Preditivo + Painel</div>
+      </div>
+      <div class="pers-card reveal reveal-delay-2">
+        <div class="pers-head">
+          <div class="pers-avatar" style="background:linear-gradient(135deg,#0f172a,#1e3a8a);">PM</div>
+          <div>
+            <div class="pers-name">Coord. de Chapa Partidária</div>
+            <div class="pers-role">Diretório estadual · 10–20 candidatos</div>
+          </div>
+        </div>
+        <p class="pers-quote">"Preciso de sistema e método, não de planilha e improviso."</p>
+        <div class="pers-budget">Produto recomendado: Pacotes em escala</div>
+      </div>
+      <div class="pers-card reveal">
+        <div class="pers-head">
+          <div class="pers-avatar" style="background:linear-gradient(135deg,#1e3a5f,#0891b2);">FC</div>
+          <div>
+            <div class="pers-name">Prefeita · 2º Mandato</div>
+            <div class="pers-role">Município 60k–120k hab. · Inelegível</div>
+          </div>
+        </div>
+        <p class="pers-quote">"Preciso saber o que está acontecendo no meu município antes que apareça nas pesquisas."</p>
+        <div class="pers-budget">Produto recomendado: SIM Retainer</div>
+      </div>
+      <div class="pers-card reveal reveal-delay-1">
+        <div class="pers-head">
+          <div class="pers-avatar" style="background:linear-gradient(135deg,#312e81,#4f46e5);">DL</div>
+          <div>
+            <div class="pers-name">Dep. Estadual · 1º Mandato</div>
+            <div class="pers-role">Estado grande · Base em consolidação</div>
+          </div>
+        </div>
+        <p class="pers-quote">"Fui eleito com votos de uma região. Preciso ampliar minha base antes de 2026."</p>
+        <div class="pers-budget">Produto recomendado: Monitor de Mandato</div>
+      </div>
+      <div class="pers-card reveal reveal-delay-2">
+        <div class="pers-head">
+          <div class="pers-avatar" style="background:linear-gradient(135deg,#1c1917,#1852C8);">AB</div>
+          <div>
+            <div class="pers-name">Assessora Parlamentar</div>
+            <div class="pers-role">Chefe de gabinete · Dep. Federal/Estadual</div>
+          </div>
+        </div>
+        <p class="pers-quote">"Preciso de dados que eu possa apresentar ao deputado em 10 minutos de reunião."</p>
+        <div class="pers-budget">Produto recomendado: Relatórios de Monitoramento</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" aria-label="Entre em contato">
+  <div class="bg-glow contact-glow"></div>
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <span class="tag reveal">Contato</span>
+        <h2 class="section-title reveal reveal-delay-1">
+          Vamos transformar<br>seus dados em votos.
+        </h2>
+        <p class="reveal reveal-delay-2">
+          Descreva seu cenário eleitoral e agende uma conversa com nossa equipe.
+          Identificaremos qual produto NIE se encaixa melhor no seu momento político.
+        </p>
+
+        <div class="contact-bullets reveal reveal-delay-3">
+          <div class="c-bullet">
+            <div class="c-bullet-icon">🕒</div>
+            <div>
+              <div class="c-bullet-title">Resposta em até 24h</div>
+              <div class="c-bullet-desc">Nossa equipe responde em até um dia útil com uma análise preliminar do seu cenário.</div>
+            </div>
+          </div>
+          <div class="c-bullet">
+            <div class="c-bullet-icon">🔒</div>
+            <div>
+              <div class="c-bullet-title">Confidencialidade total</div>
+              <div class="c-bullet-desc">Todas as conversas e informações compartilhadas são tratadas com sigilo absoluto.</div>
+            </div>
+          </div>
+          <div class="c-bullet">
+            <div class="c-bullet-icon">📋</div>
+            <div>
+              <div class="c-bullet-title">Proposta personalizada</div>
+              <div class="c-bullet-desc">Nenhuma proposta genérica. Cada cliente recebe uma estratégia específica para seu território e cargo.</div>
+            </div>
+          </div>
+          <div class="c-bullet">
+            <div class="c-bullet-icon">✅</div>
+            <div>
+              <div class="c-bullet-title">100% LGPD</div>
+              <div class="c-bullet-desc">Trabalhamos exclusivamente com dados públicos. Conformidade total com a Lei Geral de Proteção de Dados.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-wrap reveal reveal-delay-2">
+        <div id="form-content">
+          <div class="form-heading">Solicite seu diagnóstico</div>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="fgroup">
+                <label class="flabel" for="name">Nome completo *</label>
+                <input class="finput" type="text" id="name" name="name" placeholder="Seu nome" required />
+                <span class="ferror">Campo obrigatório</span>
+              </div>
+              <div class="fgroup">
+                <label class="flabel" for="phone">Telefone / WhatsApp</label>
+                <input class="finput" type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" />
+                <span class="ferror">Número inválido</span>
+              </div>
+            </div>
+            <div class="fgroup full">
+              <label class="flabel" for="email">E-mail *</label>
+              <input class="finput" type="email" id="email" name="email" placeholder="seu@email.com" required />
+              <span class="ferror">E-mail inválido</span>
+            </div>
+            <div class="form-row">
+              <div class="fgroup">
+                <label class="flabel" for="cargo">Cargo / situação *</label>
+                <select class="fselect" id="cargo" name="cargo" required>
+                  <option value="">Selecione</option>
+                  <option>Vereador(a) em exercício</option>
+                  <option>Candidato(a) a vereador</option>
+                  <option>Prefeito(a) em exercício</option>
+                  <option>Candidato(a) a prefeito</option>
+                  <option>Deputado(a) Estadual</option>
+                  <option>Deputado(a) Federal</option>
+                  <option>Senador(a)</option>
+                  <option>Coordenador(a) de campanha</option>
+                  <option>Assessor(a) parlamentar</option>
+                  <option>Diretório partidário</option>
+                  <option>Outro</option>
+                </select>
+                <span class="ferror">Campo obrigatório</span>
+              </div>
+              <div class="fgroup">
+                <label class="flabel" for="estado">Estado *</label>
+                <select class="fselect" id="estado" name="estado" required>
+                  <option value="">Selecione</option>
+                  <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                  <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                  <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                  <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                  <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                  <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                  <option>SP</option><option>SE</option><option>TO</option>
+                </select>
+                <span class="ferror">Campo obrigatório</span>
+              </div>
+            </div>
+            <div class="fgroup full">
+              <label class="flabel" for="produto">Produto de interesse</label>
+              <select class="fselect" id="produto" name="produto">
+                <option value="">Não sei ainda — quero uma recomendação</option>
+                <option>NIE-01 · Diagnóstico Territorial</option>
+                <option>NIE-04 · Segmentação GRID™</option>
+                <option>NIE-05 · Modelo Preditivo</option>
+                <option>NIE-09 · Sistema de Inteligência de Mandato</option>
+                <option>Pacote Essencial (Vereadores)</option>
+                <option>Pacote Campanha Municipal</option>
+                <option>Pacote Campanha Estadual/Federal</option>
+                <option>Pacote Chapa Partidária</option>
+                <option>Retainer de Mandato</option>
+                <option>Workshop / Mentoria</option>
+              </select>
+            </div>
+            <div class="fgroup full">
+              <label class="flabel" for="message">Descreva seu cenário *</label>
+              <textarea class="ftextarea" id="message" name="message" placeholder="Conte-nos sobre seu território, cargo, eleição e principais desafios. Quanto mais contexto, melhor poderemos ajudar." required></textarea>
+              <span class="ferror">Campo obrigatório</span>
+            </div>
+            <button type="submit" class="btn-primary fsub">
+              Enviar solicitação →
+            </button>
+          </form>
+        </div>
+        <div id="form-success" class="fsuccess">
+          <div class="fsuccess-icon">✅</div>
+          <div class="fsuccess-title">Mensagem recebida!</div>
+          <p class="fsuccess-text">Nossa equipe entrará em contato em até 24 horas com uma análise preliminar do seu cenário eleitoral. Obrigado pelo contato.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-main">NIE</span>
+          <span class="logo-sub">Núcleo de Inteligência Eleitoral</span>
+        </a>
+        <p class="footer-tagline">
+          Transformamos dados públicos em vantagem eleitoral competitiva —
+          da largada da campanha ao exercício do mandato.
+        </p>
+        <div class="footer-slogan">"Transformando dados em votos."</div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Produtos</div>
+        <ul class="footer-links">
+          <li><a href="#services">Diagnóstico Territorial</a></li>
+          <li><a href="#services">Segmentação GRID™</a></li>
+          <li><a href="#services">Modelo Preditivo</a></li>
+          <li><a href="#services">Painel Operacional</a></li>
+          <li><a href="#services">SIM — Mandato</a></li>
+          <li><a href="#services">Workshop &amp; Mentoria</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Empresa</div>
+        <ul class="footer-links">
+          <li><a href="#about">Sobre o NIE</a></li>
+          <li><a href="#methodology">Metodologia GRID™</a></li>
+          <li><a href="#differentials">Diferenciais</a></li>
+          <li><a href="#packages">Pacotes</a></li>
+          <li><a href="#personas">Para quem é</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contato</div>
+        <ul class="footer-links">
+          <li><a href="#contact">Solicitar diagnóstico</a></li>
+          <li><a href="#contact">Fale com o NIE</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+        <div style="margin-top:20px;">
+          <div class="lgpd-badge">
+            <div class="lgpd-dot"></div>
+            <span class="lgpd-txt">100% LGPD Compliant</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bot">
+      <span class="footer-copy">© 2025 NIE · Núcleo de Inteligência Eleitoral · by VSC · Vinicius Soares Castro. Todos os direitos reservados.</span>
+      <div class="footer-legal">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Conformidade LGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" role="alert" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
