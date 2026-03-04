@@ -1101,3 +1101,176 @@ h1, h2, h3, h4, h5, h6 {
   .sobre-numeros { grid-template-columns: 1fr; }
   .rodape-base { flex-direction: column; align-items: flex-start; }
 }
+
+
+/* ============================================
+   NIE v2.1 — Adições: WhatsApp + Spinner
+   Adicione ao final do style.css existente
+   ============================================ */
+
+/* ===== BOTÃO WHATSAPP NA SEÇÃO DE CONTATO ===== */
+.whatsapp-contato-bloco {
+  margin-top: 32px;
+}
+
+.whatsapp-contato-divisor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.whatsapp-contato-divisor::before,
+.whatsapp-contato-divisor::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--borda);
+}
+.whatsapp-contato-divisor span {
+  font-family: var(--fonte-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-claro);
+  white-space: nowrap;
+}
+
+.botao-whatsapp-contato {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: #16a34a;
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 14px 24px;
+  border-radius: var(--raio-borda);
+  border: none;
+  cursor: pointer;
+  transition: var(--transicao);
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.28);
+  text-decoration: none;
+}
+.botao-whatsapp-contato:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(22, 163, 74, 0.38);
+}
+.botao-whatsapp-contato .whatsapp-icone {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.botao-whatsapp-contato .whatsapp-seta {
+  margin-left: auto;
+  opacity: 0.7;
+  font-size: 1.1rem;
+  transition: var(--transicao);
+}
+.botao-whatsapp-contato:hover .whatsapp-seta {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
+.botao-whatsapp-flutuante {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9998;
+  width: 56px;
+  height: 56px;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(22, 163, 74, 0.45);
+  transition: var(--transicao);
+  text-decoration: none;
+}
+.botao-whatsapp-flutuante svg {
+  width: 28px;
+  height: 28px;
+}
+.botao-whatsapp-flutuante:hover {
+  background: #15803d;
+  transform: scale(1.12);
+  box-shadow: 0 8px 32px rgba(22, 163, 74, 0.55);
+}
+.botao-whatsapp-flutuante:hover .flutuante-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Tooltip do botão flutuante */
+.flutuante-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  background: var(--texto-escuro);
+  color: #fff;
+  font-family: var(--fonte-corpo);
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 7px 14px;
+  border-radius: var(--raio-borda);
+  opacity: 0;
+  transform: translateX(8px);
+  pointer-events: none;
+  transition: var(--transicao);
+  box-shadow: var(--sombra-suave);
+}
+.flutuante-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--texto-escuro);
+}
+
+/* Ajuste: notificação (toast) fica acima do botão flutuante */
+.notificacao {
+  bottom: 100px !important;
+}
+
+/* ===== SPINNER NO BOTÃO DE ENVIO ===== */
+.spinner-envio {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: girar 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVIDADE WHATSAPP ===== */
+@media (max-width: 768px) {
+  .botao-whatsapp-flutuante {
+    bottom: 24px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+  .botao-whatsapp-flutuante svg {
+    width: 26px;
+    height: 26px;
+  }
+  .flutuante-tooltip { display: none; }
+  .notificacao {
+    bottom: 88px !important;
+    right: 16px;
+  }
+}
