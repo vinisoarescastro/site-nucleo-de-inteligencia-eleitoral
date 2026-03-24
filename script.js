@@ -1,5 +1,5 @@
 /* ============================================
-   NIE · Núcleo de Inteligência Eleitoral
+   NIE · Núcleo de Dados
    JavaScript v2.2 — com EmailJS + CallMeBot
    ============================================ */
 'use strict';
