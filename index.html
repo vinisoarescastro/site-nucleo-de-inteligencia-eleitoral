@@ -12,8 +12,6 @@
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://nie.com.br" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
@@ -58,7 +56,6 @@
   <div class="conteiner">
     <div class="heroi-conteudo">
 
-      <!-- Texto -->
       <div class="heroi-texto">
         <div class="heroi-sobrescrito">
           <div class="heroi-ponto"></div>
@@ -98,75 +95,141 @@
         </div>
       </div>
 
-      <!-- Cartão Visual -->
+
+      <!-- Cartão Visual — Dashboard Territorial v4 -->
       <div class="heroi-visual" aria-hidden="true">
         <div class="heroi-cartao">
+
+          <!-- Cabeçalho -->
           <div class="heroi-cartao-cabecalho">
-            <span class="heroi-cartao-titulo">Análise Territorial</span>
+            <div class="cartao-titulo-bloco">
+              <span class="cartao-titulo-label">Análise Territorial</span>
+              <span class="cartao-titulo-sub">GRID™ · Ciclo 2026</span>
+            </div>
             <div class="emblema-ao-vivo">
               <div class="ponto-ao-vivo"></div>
               AO VIVO
             </div>
           </div>
 
-          <div class="barras-territorio">
-            <div class="item-territorio">
-              <div class="cabecalho-territorio">
-                <span class="rotulo-territorio">Zona de Domínio</span>
-                <span class="percentual-territorio cor-1">68%</span>
-              </div>
-              <div class="trilha-territorio">
-                <div class="preenchimento-territorio cor-1" data-largura="68%"></div>
-              </div>
+          <!-- Score IVE — bloco de destaque -->
+          <div class="cartao-score-bloco">
+            <div class="score-esquerda">
+              <span class="score-rotulo">IVE Score territorial</span>
+              <span class="score-valor">0.73</span>
+              <span class="score-tendencia">▲ +0.06 vs. ciclo anterior</span>
             </div>
-            <div class="item-territorio">
-              <div class="cabecalho-territorio">
-                <span class="rotulo-territorio">Zona de Disputa</span>
-                <span class="percentual-territorio cor-2">41%</span>
-              </div>
-              <div class="trilha-territorio">
-                <div class="preenchimento-territorio cor-2" data-largura="41%"></div>
-              </div>
-            </div>
-            <div class="item-territorio">
-              <div class="cabecalho-territorio">
-                <span class="rotulo-territorio">Potencial de Expansão</span>
-                <span class="percentual-territorio cor-3">23%</span>
-              </div>
-              <div class="trilha-territorio">
-                <div class="preenchimento-territorio cor-3" data-largura="23%"></div>
-              </div>
-            </div>
-            <div class="item-territorio">
-              <div class="cabecalho-territorio">
-                <span class="rotulo-territorio">Território Abandonado</span>
-                <span class="percentual-territorio cor-4">12%</span>
-              </div>
-              <div class="trilha-territorio">
-                <div class="preenchimento-territorio cor-4" data-largura="12%"></div>
-              </div>
+            <div class="score-gauge-envolvente">
+              <svg viewBox="0 0 80 44" class="score-gauge-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad-gauge" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="#1852C8"/>
+                    <stop offset="100%" stop-color="#60a5fa"/>
+                  </linearGradient>
+                </defs>
+                <!-- trilha -->
+                <path d="M8 40 A34 34 0 0 1 72 40" fill="none" stroke="#EEF3FB" stroke-width="7" stroke-linecap="round"/>
+                <!-- preenchimento 73% do arco -->
+                <path d="M8 40 A34 34 0 0 1 72 40" fill="none" stroke="url(#grad-gauge)" stroke-width="7"
+                  stroke-linecap="round"
+                  stroke-dasharray="107 146"
+                  class="gauge-fill"/>
+                <!-- marcador ponteiro — seta apontando para fora do arco em 73% -->
+                <g transform="translate(58, 16.2) rotate(210)">
+                  <polygon points="0,-14 7.5,5 0,2 -7.5,5" fill="#00267a"/>
+                </g>
+              </svg>
+              <span class="score-gauge-label">847 seções</span>
             </div>
           </div>
 
-          <div class="heroi-metricas">
-            <div class="cartao-metrica">
-              <div class="metrica-valor">+14%</div>
-              <div class="metrica-rotulo">Crescimento projetado</div>
+          <!-- Linhas de território com barras gradiente -->
+          <div class="cartao-linhas-zona">
+
+            <div class="zona-linha zona-linha-azul">
+              <div class="zona-linha-topo">
+                <div class="zona-linha-info">
+                  <span class="zona-linha-nome">Zona de Domínio</span>
+                  <span class="zona-linha-detalhe">312 seções · Estável</span>
+                </div>
+                <div class="zona-linha-direita">
+                  <span class="zona-delta zona-delta-positivo">▲ +3.2</span>
+                  <span class="zona-pct">68%</span>
+                </div>
+              </div>
+              <div class="zona-barra-trilha">
+                <div class="zona-barra-fill zona-barra-azul" data-largura="68%"></div>
+              </div>
             </div>
-            <div class="cartao-metrica">
-              <div class="metrica-valor">847</div>
-              <div class="metrica-rotulo">Seções mapeadas</div>
+
+            <div class="zona-linha zona-linha-amber">
+              <div class="zona-linha-topo">
+                <div class="zona-linha-info">
+                  <span class="zona-linha-nome">Zona de Disputa</span>
+                  <span class="zona-linha-detalhe">248 seções · Atenção</span>
+                </div>
+                <div class="zona-linha-direita">
+                  <span class="zona-delta zona-delta-neutro">— 0.0</span>
+                  <span class="zona-pct zona-pct-amber">41%</span>
+                </div>
+              </div>
+              <div class="zona-barra-trilha">
+                <div class="zona-barra-fill zona-barra-amber" data-largura="41%"></div>
+              </div>
+            </div>
+
+            <div class="zona-linha zona-linha-verde">
+              <div class="zona-linha-topo">
+                <div class="zona-linha-info">
+                  <span class="zona-linha-nome">Expansão Possível</span>
+                  <span class="zona-linha-detalhe">178 seções · Oportunidade</span>
+                </div>
+                <div class="zona-linha-direita">
+                  <span class="zona-delta zona-delta-positivo">▲ +5.8</span>
+                  <span class="zona-pct zona-pct-verde">23%</span>
+                </div>
+              </div>
+              <div class="zona-barra-trilha">
+                <div class="zona-barra-fill zona-barra-verde" data-largura="23%"></div>
+              </div>
+            </div>
+
+            <div class="zona-linha zona-linha-vermelho">
+              <div class="zona-linha-topo">
+                <div class="zona-linha-info">
+                  <span class="zona-linha-nome">Território Adversário</span>
+                  <span class="zona-linha-detalhe">109 seções · Monitorar</span>
+                </div>
+                <div class="zona-linha-direita">
+                  <span class="zona-delta zona-delta-negativo">▼ −1.4</span>
+                  <span class="zona-pct zona-pct-vermelho">12%</span>
+                </div>
+              </div>
+              <div class="zona-barra-trilha">
+                <div class="zona-barra-fill zona-barra-vermelho" data-largura="12%"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- KPIs rodapé -->
+          <div class="cartao-kpis">
+            <div class="kpi-item">
+              <span class="kpi-valor">+14%</span>
+              <span class="kpi-rotulo">Crescimento</span>
+            </div>
+            <div class="kpi-divisor"></div>
+            <div class="kpi-item">
+              <span class="kpi-valor">5.570</span>
+              <span class="kpi-rotulo">Municípios</span>
+            </div>
+            <div class="kpi-divisor"></div>
+            <div class="kpi-item">
+              <span class="kpi-valor">6</span>
+              <span class="kpi-rotulo">Clusters</span>
             </div>
           </div>
-        </div>
 
-        <div class="cartao-flutuante cartao-flutuante-1">
-          <div class="flutuante-rotulo">IVE Score</div>
-          <div class="flutuante-valor verde">0.73 ↑</div>
-        </div>
-        <div class="cartao-flutuante cartao-flutuante-2">
-          <div class="flutuante-rotulo">Clusters GRID™</div>
-          <div class="flutuante-valor azul">6 perfis</div>
         </div>
       </div>
 
@@ -174,24 +237,72 @@
   </div>
 </section>
 
-<!-- ===== FAIXA DE CLIENTES ===== -->
+<!-- ===== SEGMENTOS ATENDIDOS ===== -->
+<!--
+  REDESIGN: Seção #clientes completamente reestruturada.
+  Antes: faixa ticker com divisores — visual de rodapé, pouca hierarquia.
+  Depois: painel institucional escuro, 2 colunas, numeração editorial,
+  descrição de nível institucional por cargo — transmite abrangência e seriedade.
+-->
 <section id="clientes" aria-label="Segmentos atendidos">
   <div class="conteiner">
-    <p class="clientes-rotulo">Atendemos candidatos de todos os espectros com o mesmo rigor técnico</p>
-    <div class="clientes-faixa">
-      <div class="cliente-item">Vereadores</div>
-      <div class="cliente-divisor">♦︎</div>
-      <div class="cliente-item">Prefeitos</div>
-      <div class="cliente-divisor">♦︎</div>
-      <div class="cliente-item">Deputados Estaduais</div>
-      <div class="cliente-divisor">♦︎</div>
-      <div class="cliente-item">Deputados Federais</div>
-      <div class="cliente-divisor">♦︎</div>
-      <div class="cliente-item">Senadores</div>
-      <div class="cliente-divisor">♦︎</div>
-      <div class="cliente-item">Governadores</div>
-      <div class="cliente-divisor">♦︎</div>
-      <div class="cliente-item">Chapas Partidárias</div>
+    <div class="clientes-envolvente">
+
+      <!-- Coluna esquerda: posicionamento institucional -->
+      <div class="clientes-intro-col">
+        <span class="clientes-acento">Segmentos</span>
+        <h2 class="clientes-declaracao">
+          Do vereador<br>ao governador.
+        </h2>
+        <p class="clientes-descricao">
+          O NIE atende candidatos e mandatários em todos os níveis do sistema político
+          brasileiro com o mesmo rigor analítico e metodológico.
+        </p>
+        <div class="clientes-indicador">
+          <span class="clientes-indicador-numero" data-contagem="7" data-sufixo="">0</span>
+          <span class="clientes-indicador-rotulo">cargos<br>atendidos</span>
+        </div>
+      </div>
+
+      <!-- Coluna direita: lista numerada de segmentos -->
+      <div class="clientes-lista-col">
+        <div class="cliente-linha">
+          <span class="cliente-num">01</span>
+          <span class="cliente-cargo">Vereadores</span>
+          <span class="cliente-nivel">Poder Legislativo Municipal</span>
+        </div>
+        <div class="cliente-linha">
+          <span class="cliente-num">02</span>
+          <span class="cliente-cargo">Prefeitos</span>
+          <span class="cliente-nivel">Poder Executivo Municipal</span>
+        </div>
+        <div class="cliente-linha">
+          <span class="cliente-num">03</span>
+          <span class="cliente-cargo">Deputados Estaduais</span>
+          <span class="cliente-nivel">Poder Legislativo Estadual</span>
+        </div>
+        <div class="cliente-linha">
+          <span class="cliente-num">04</span>
+          <span class="cliente-cargo">Deputados Federais</span>
+          <span class="cliente-nivel">Câmara dos Deputados</span>
+        </div>
+        <div class="cliente-linha">
+          <span class="cliente-num">05</span>
+          <span class="cliente-cargo">Senadores</span>
+          <span class="cliente-nivel">Senado Federal</span>
+        </div>
+        <div class="cliente-linha">
+          <span class="cliente-num">06</span>
+          <span class="cliente-cargo">Governadores</span>
+          <span class="cliente-nivel">Poder Executivo Estadual</span>
+        </div>
+        <div class="cliente-linha">
+          <span class="cliente-num">07</span>
+          <span class="cliente-cargo">Chapas Partidárias</span>
+          <span class="cliente-nivel">Diretórios &amp; Coordenações</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -219,36 +330,92 @@
         </p>
 
         <div class="sobre-valores revelar revelar-atraso-3">
+
+          <!-- Território -->
           <div class="valor-item">
-            <div class="valor-icone">🗺️</div>
+            <div class="valor-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+                <line x1="9" y1="3" x2="9" y2="18"/>
+                <line x1="15" y1="6" x2="15" y2="21"/>
+              </svg>
+            </div>
             <div class="valor-nome">Território</div>
             <div class="valor-descricao">O voto mora num lugar. Toda análise parte do dado georreferenciado.</div>
           </div>
+
+          <!-- Evidência -->
           <div class="valor-item">
-            <div class="valor-icone">📊</div>
+            <div class="valor-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+                <line x1="3" y1="20" x2="21" y2="20"/>
+              </svg>
+            </div>
             <div class="valor-nome">Evidência</div>
             <div class="valor-descricao">Nenhuma decisão sem dado. Recomendações sempre sustentadas em fontes verificáveis.</div>
           </div>
+
+          <!-- Precisão -->
           <div class="valor-item">
-            <div class="valor-icone">🎯</div>
+            <div class="valor-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
             <div class="valor-nome">Precisão</div>
             <div class="valor-descricao">Modelos com intervalo de confiança explicitado. Cada ponto percentual importa.</div>
           </div>
+
+          <!-- Ciclo -->
           <div class="valor-item">
-            <div class="valor-icone">🔄</div>
+            <div class="valor-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"/>
+                <polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+            </div>
             <div class="valor-nome">Ciclo</div>
             <div class="valor-descricao">Campanha e mandato são contínuos. Atuamos da pré-campanha à gestão do mandato.</div>
           </div>
+
+          <!-- Transparência -->
           <div class="valor-item">
-            <div class="valor-icone">🔍</div>
+            <div class="valor-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
             <div class="valor-nome">Transparência</div>
             <div class="valor-descricao">Método aberto, resultado claro. Clientes entendem a metodologia.</div>
           </div>
+
+          <!-- Imparcialidade -->
           <div class="valor-item">
-            <div class="valor-icone">⚖️</div>
+            <div class="valor-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="3" x2="12" y2="21"/>
+                <path d="M5 6h14"/>
+                <path d="M3 12c0 2.21 2.686 4 6 4s6-1.79 6-4"/>
+                <path d="M9 12c0 2.21 2.686 4 6 4s6-1.79 6-4"/>
+              </svg>
+            </div>
             <div class="valor-nome">Imparcialidade</div>
             <div class="valor-descricao">Dados não têm partido. Atendemos diferentes espectros com o mesmo rigor.</div>
           </div>
+
         </div>
       </div>
 
@@ -373,7 +540,6 @@
       <a href="#contato" class="botao-secundario revelar revelar-atraso-2">Solicitar proposta →</a>
     </div>
 
-    <!-- Linha 1 -->
     <div class="linha-servico revelar">
       <div class="linha-servico-cabecalho">
         <span class="linha-numero">01</span>
@@ -385,30 +551,23 @@
           <div class="servico-id">NIE-01</div>
           <div class="servico-nome">Diagnóstico Territorial Completo</div>
           <div class="servico-descricao">Análise histórica e georreferenciada do território eleitoral. Mapeia zonas de domínio, disputa e territórios abandonados com base em resultados das últimas 3 eleições do TSE.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 4–5 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 4–5 semanas</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-02</div>
           <div class="servico-nome">Mapeamento de Força Concorrencial</div>
           <div class="servico-descricao">Análise da força eleitoral dos principais concorrentes por território. Identifica vulnerabilidades e janelas de migração de votos dos adversários.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 3–4 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 3–4 semanas</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-03</div>
           <div class="servico-nome">Análise de Demandas Territoriais</div>
           <div class="servico-descricao">Cruzamento de dados públicos de saúde, infraestrutura, segurança e renda por território. Orienta pauta de campanha e agenda de mandato com dados do IBGE e DATASUS.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 4–6 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 4–6 semanas</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Linha 2 -->
     <div class="linha-servico revelar">
       <div class="linha-servico-cabecalho">
         <span class="linha-numero">02</span>
@@ -420,22 +579,17 @@
           <div class="servico-id">NIE-04</div>
           <div class="servico-nome">Segmentação Eleitoral GRID™</div>
           <div class="servico-descricao">Clusterização do eleitorado por perfil comportamental. Define de 4 a 8 personas eleitorais reais com seus temas-gatilho e canais de comunicação preferidos.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 5–7 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 5–7 semanas</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-05</div>
           <div class="servico-nome">Modelo Preditivo de Votação</div>
           <div class="servico-descricao">Projeção quantitativa do desempenho eleitoral por zona, com regressão histórica. Simula cenários de aliança, coligações e análise de segundo turno.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 7–10 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 7–10 semanas</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Linha 3 -->
     <div class="linha-servico revelar">
       <div class="linha-servico-cabecalho">
         <span class="linha-numero">03</span>
@@ -447,30 +601,23 @@
           <div class="servico-id">NIE-06</div>
           <div class="servico-nome">Painel Operacional de Campanha</div>
           <div class="servico-descricao">Dashboard de monitoramento em tempo real. Integra dados de redes sociais, sentimento e alertas de movimentação competitiva georreferenciados.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Retainer mensal</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Retainer mensal</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-07</div>
           <div class="servico-nome">Plano de Ativação Territorial</div>
           <div class="servico-descricao">Estratégia de ação territorial: onde fazer corpo a corpo, eventos, panfletagem e como distribuir o tempo do candidato por território com ROI eleitoral.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 4–5 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 4–5 semanas</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-08</div>
           <div class="servico-nome">Monitoramento de Sentimento Digital</div>
           <div class="servico-descricao">Monitoramento contínuo da presença digital do candidato e concorrentes. Análise de menções, engajamento e sentimento nas principais redes sociais.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Retainer mensal</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Retainer mensal</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Linha 4 -->
     <div class="linha-servico revelar">
       <div class="linha-servico-cabecalho">
         <span class="linha-numero">04</span>
@@ -482,22 +629,17 @@
           <div class="servico-id">NIE-09</div>
           <div class="servico-nome">Sistema de Inteligência de Mandato (SIM)</div>
           <div class="servico-descricao">Plataforma contínua de monitoramento do capital político: mapa de demandas territoriais, score de aprovação por zona e planejamento antecipado de reeleição.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Retainer anual</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Retainer anual</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-10</div>
           <div class="servico-nome">Análise de Impacto de Emendas</div>
           <div class="servico-descricao">Especializado para parlamentares com poder de emenda. Analisa onde emendas terão maior impacto eleitoral e social, maximizando o retorno político do investimento público.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Prazo: 5–8 semanas</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Prazo: 5–8 semanas</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Linha 5 -->
     <div class="linha-servico revelar">
       <div class="linha-servico-cabecalho">
         <span class="linha-numero">05</span>
@@ -509,21 +651,16 @@
           <div class="servico-id">NIE-11</div>
           <div class="servico-nome">Workshop: Inteligência Eleitoral para Equipes</div>
           <div class="servico-descricao">Treinamento intensivo de 8h para coordenadores e assessores. Aborda leitura de dados TSE, mapas eleitorais, segmentação e planejamento territorial.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">1 dia · Online ou Presencial</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">1 dia · Online ou Presencial</span></div>
         </div>
         <div class="servico-cartao">
           <div class="servico-id">NIE-12</div>
           <div class="servico-nome">Mentoria Estratégica Individual</div>
           <div class="servico-descricao">Programa de mentoria direta com Vinicius Soares Castro. Sessões quinzenais de 90 min com acompanhamento de casos reais e biblioteca de templates NIE.</div>
-          <div class="servico-rodape">
-            <span class="servico-prazo">Retainer trimestral</span>
-          </div>
+          <div class="servico-rodape"><span class="servico-prazo">Retainer trimestral</span></div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -686,7 +823,6 @@
       <p style="color:var(--texto-secundario);max-width:560px;margin:0 auto 28px;font-weight:300;line-height:1.75;">Cada candidatura é única. Entre em contato para receber uma proposta sob medida para o seu território, cargo e momento político.</p>
       <a href="#contato" class="botao-primario" style="display:inline-flex;">Solicitar proposta agora →</a>
     </div>
-
   </div>
 </section>
 
@@ -770,7 +906,6 @@
         <div class="perfil-recomendacao">Produto recomendado: Relatórios de Monitoramento</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -791,37 +926,73 @@
         </p>
 
         <div class="contato-pontos revelar revelar-atraso-3">
+
+          <!-- Resposta 24h -->
           <div class="ponto-contato">
-            <div class="ponto-icone">🕒</div>
+            <div class="ponto-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
             <div>
               <div class="ponto-titulo">Resposta em até 24h</div>
               <div class="ponto-descricao">Nossa equipe responde em até um dia útil com uma análise preliminar do seu cenário.</div>
             </div>
           </div>
+
+          <!-- Confidencialidade -->
           <div class="ponto-contato">
-            <div class="ponto-icone">🔒</div>
+            <div class="ponto-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
             <div>
               <div class="ponto-titulo">Confidencialidade total</div>
               <div class="ponto-descricao">Todas as conversas e informações compartilhadas são tratadas com sigilo absoluto.</div>
             </div>
           </div>
+
+          <!-- Proposta personalizada -->
           <div class="ponto-contato">
-            <div class="ponto-icone">📋</div>
+            <div class="ponto-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
             <div>
               <div class="ponto-titulo">Proposta personalizada</div>
               <div class="ponto-descricao">Nenhuma proposta genérica. Cada cliente recebe uma estratégia específica para seu território e cargo.</div>
             </div>
           </div>
+
+          <!-- LGPD -->
           <div class="ponto-contato">
-            <div class="ponto-icone">✅</div>
+            <div class="ponto-icone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
             <div>
               <div class="ponto-titulo">100% LGPD</div>
               <div class="ponto-descricao">Trabalhamos exclusivamente com dados públicos. Conformidade total com a Lei Geral de Proteção de Dados.</div>
             </div>
           </div>
+
         </div>
 
-        <!-- ===== BOTÃO WHATSAPP DIRETO ===== -->
+        <!-- Botão WhatsApp direto -->
         <div class="whatsapp-contato-bloco revelar revelar-atraso-3">
           <div class="whatsapp-contato-divisor">
             <span>ou fale diretamente</span>
@@ -839,8 +1010,6 @@
             <span class="whatsapp-seta">→</span>
           </a>
         </div>
-        <!-- ===== FIM BOTÃO WHATSAPP ===== -->
-
       </div>
 
       <div class="formulario-envolvente revelar revelar-atraso-2">
@@ -924,8 +1093,15 @@
             </button>
           </form>
         </div>
+
+        <!-- Estado de sucesso: emoji ✅ substituído por ícone SVG corporativo -->
         <div id="formulario-resultado" class="formulario-sucesso">
-          <div class="sucesso-icone">✅</div>
+          <div class="sucesso-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
           <div class="sucesso-titulo">Mensagem recebida!</div>
           <p class="sucesso-texto">Nossa equipe entrará em contato em até 24 horas com uma análise preliminar do seu cenário eleitoral. Obrigado pelo contato.</p>
           <a href="#"
@@ -1015,7 +1191,7 @@
 
 <div class="notificacao" role="alert" aria-live="polite"></div>
 
-<!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
+<!-- Botão flutuante WhatsApp -->
 <a href="#"
    class="botao-whatsapp-flutuante"
    data-whatsapp="Olá, Vinicius! Vim pelo site do NIE e gostaria de saber mais sobre os serviços."

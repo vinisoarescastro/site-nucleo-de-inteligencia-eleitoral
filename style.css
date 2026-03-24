@@ -1,17 +1,13 @@
 /* ============================================
    NIE · Núcleo de Inteligência Eleitoral
-   Stylesheet v2.0 — Tema Claro
+   Stylesheet v3.0 — Tema Claro · Sem emojis
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap');
 
 /* ============ VARIÁVEIS CSS ============ */
 :root {
-  /* Gradientes */
-    --gradiente-azul: linear-gradient(
-    90deg, #0a76f1, #053b6e
-  );
-
+  --gradiente-azul: linear-gradient(90deg, #0a76f1, #053b6e);
 
   /* — Cores de fundo — */
   --cor-fundo:              #F7F9FD;
@@ -219,7 +215,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-logo {
-  /* display: flex; */
   flex-direction: column;
   line-height: 1;
 }
@@ -233,7 +228,6 @@ h1, h2, h3, h4, h5, h6 {
 .nav-logo .logo-subtitulo {
   display: inline-block;
   max-width: 180px;
-
   font-family: var(--fonte-mono);
   font-size: 0.64rem;
   padding: 0 0 0 5px;
@@ -415,47 +409,59 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 6px;
 }
 
-/* Cartão visual do herói */
+/* ===== CARTÃO VISUAL DO HERÓI ===== */
 .heroi-visual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .heroi-cartao {
-  position: relative;
   background: var(--cor-fundo-cartao);
   border: 1px solid var(--borda-cartao);
   border-radius: var(--raio-borda-grande);
-  padding: 32px;
   width: 100%;
   max-width: 420px;
+  overflow: hidden;
   box-shadow: var(--sombra-forte);
 }
+
+/* — Cabeçalho — */
 .heroi-cartao-cabecalho {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--borda);
 }
-.heroi-cartao-titulo {
+.cartao-titulo-bloco { display: flex; flex-direction: column; gap: 2px; }
+.cartao-titulo-label {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--texto-escuro);
+  line-height: 1;
+}
+.cartao-titulo-sub {
   font-family: var(--fonte-mono);
-  font-size: 11px;
-  letter-spacing: 0.15em;
+  font-size: 9px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--texto-secundario);
+  color: var(--texto-claro);
 }
 .emblema-ao-vivo {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: rgba(22,163,74,0.07);
+  border: 1px solid rgba(22,163,74,0.22);
   border-radius: 100px;
-  padding: 4px 12px;
+  padding: 4px 11px;
   font-family: var(--fonte-mono);
-  font-size: 10px;
-  color: var(--azul-destaque);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: #16a34a;
 }
 .ponto-ao-vivo {
   width: 6px; height: 6px;
@@ -464,126 +470,382 @@ h1, h2, h3, h4, h5, h6 {
   animation: piscar 2s infinite;
 }
 
-.barras-territorio { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
-.item-territorio { display: flex; flex-direction: column; gap: 6px; }
-.cabecalho-territorio { display: flex; justify-content: space-between; align-items: center; }
-.rotulo-territorio { font-size: 12px; color: var(--texto-secundario); font-weight: 500; }
-.percentual-territorio { font-family: var(--fonte-mono); font-size: 12px; font-weight: 700; }
-.percentual-territorio.cor-1 { color: var(--azul-destaque); }
-.percentual-territorio.cor-2 { color: #d97706; }
-.percentual-territorio.cor-3 { color: #059669; }
-.percentual-territorio.cor-4 { color: #dc2626; }
-.trilha-territorio { height: 6px; background: var(--borda); border-radius: 100px; overflow: hidden; }
-.preenchimento-territorio {
-  height: 100%; border-radius: 100px;
-  width: 0;
-  transition: width 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
-}
-.preenchimento-territorio.cor-1 { background: linear-gradient(90deg, var(--azul-principal), var(--azul-destaque)); }
-.preenchimento-territorio.cor-2 { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-.preenchimento-territorio.cor-3 { background: linear-gradient(90deg, #10b981, #34d399); }
-.preenchimento-territorio.cor-4 { background: linear-gradient(90deg, #ef4444, #f87171); }
-
-.heroi-metricas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+/* — Bloco IVE Score — */
+.cartao-score-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(110deg, #EFF4FF 0%, #F7F9FD 100%);
+  border-bottom: 1px solid var(--borda);
   gap: 12px;
 }
-.cartao-metrica {
-  background: var(--cor-fundo-alternativo);
-  border: 1px solid var(--borda);
-  border-radius: var(--raio-borda);
-  padding: 14px;
+.score-esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
-.metrica-valor {
-  font-family: var(--fonte-titulo);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--azul-destaque);
-}
-.metrica-rotulo {
+.score-rotulo {
   font-family: var(--fonte-mono);
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  color: var(--texto-secundario);
+  font-size: 10px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-top: 4px;
+  color: var(--texto-claro);
+}
+.score-valor {
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--texto-escuro);
+  letter-spacing: -0.03em;
+}
+.score-tendencia {
+  font-family: var(--fonte-mono);
+  font-size: 12px;
+  color: #16a34a;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.cartao-flutuante {
-  position: absolute;
-  background: var(--cor-fundo-cartao);
-  border: 1px solid var(--borda-cartao);
-  border-radius: var(--raio-borda);
-  padding: 12px 16px;
-  box-shadow: var(--sombra-media);
+/* Gauge semicircular */
+.score-gauge-envolvente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
 }
-.cartao-flutuante-1 { top: -24px; right: -24px; animation: animacaoFlutuar 4s ease-in-out infinite; }
-.cartao-flutuante-2 { bottom: -24px; left: -24px; animation: animacaoFlutuar 4s ease-in-out infinite 2s; }
-@keyframes animacaoFlutuar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.score-gauge-svg {
+  width: 80px;
+  height: 44px;
+  overflow: visible;
 }
-.flutuante-rotulo {
+.gauge-fill {
+  stroke-dasharray: 0 146;
+  animation: gauge-entrar 1.4s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+}
+@keyframes gauge-entrar {
+  to { stroke-dasharray: 107 146; }
+}
+.score-gauge-label {
   font-family: var(--fonte-mono);
-  font-size: 9px; letter-spacing: 0.1em;
-  color: var(--texto-secundario);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--texto-claro);
   text-transform: uppercase;
-  margin-bottom: 4px;
 }
-.flutuante-valor {
+
+/* — Linhas de zona — */
+.cartao-linhas-zona {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.zona-linha {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--borda);
+  border-left: 3px solid transparent;
+  transition: background 0.2s ease;
+}
+.zona-linha:last-child { border-bottom: none; }
+
+/* Sotaque lateral por zona */
+.zona-linha-azul     { border-left-color: #2563EB; }
+.zona-linha-amber    { border-left-color: #f59e0b; }
+.zona-linha-verde    { border-left-color: #10b981; }
+.zona-linha-vermelho { border-left-color: #ef4444; }
+
+/* Hover sutil */
+.zona-linha-azul:hover     { background: rgba(37,99,235,0.03); }
+.zona-linha-amber:hover    { background: rgba(245,158,11,0.03); }
+.zona-linha-verde:hover    { background: rgba(16,185,129,0.03); }
+.zona-linha-vermelho:hover { background: rgba(239,68,68,0.03); }
+
+.zona-linha-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+.zona-linha-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.zona-linha-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-escuro);
+  line-height: 1;
+}
+.zona-linha-detalhe {
+  font-family: var(--fonte-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--texto-claro);
+}
+
+.zona-linha-direita {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Delta de variação */
+.zona-delta {
+  font-family: var(--fonte-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.zona-delta-positivo {
+  color: #15803d;
+  background: rgba(22,163,74,0.10);
+}
+.zona-delta-neutro {
+  color: var(--texto-secundario);
+  background: var(--cor-fundo-alternativo);
+}
+.zona-delta-negativo {
+  color: #b91c1c;
+  background: rgba(239,68,68,0.09);
+}
+
+/* Percentual */
+.zona-pct {
   font-family: var(--fonte-titulo);
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--texto-escuro);
+  color: var(--azul-destaque);
+  line-height: 1;
+  min-width: 40px;
+  text-align: right;
 }
-.flutuante-valor.verde { color: #16a34a; }
-.flutuante-valor.azul  { color: var(--azul-destaque); }
+.zona-pct-amber    { color: #d97706; }
+.zona-pct-verde    { color: #059669; }
+.zona-pct-vermelho { color: #dc2626; }
 
-/* ===== FAIXA DE CLIENTES ===== */
-#clientes {
-  padding: 36px 0;
-  border-top: 1px solid var(--borda);
-  border-bottom: 1px solid var(--borda);
-  background: var(--gradiente-azul);
+/* Barra de progresso com gradiente */
+.zona-barra-trilha {
+  height: 6px;
+  background: var(--cor-fundo-alternativo);
+  border-radius: 100px;
+  overflow: hidden;
 }
-.clientes-rotulo {
+.zona-barra-fill {
+  height: 100%;
+  border-radius: 100px;
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+/* Gradientes por zona — do saturado ao claro */
+.zona-barra-azul {
+  background: linear-gradient(90deg, #1852C8 0%, #2563EB 45%, #93c5fd 100%);
+}
+.zona-barra-amber {
+  background: linear-gradient(90deg, #b45309 0%, #f59e0b 50%, #fde68a 100%);
+}
+.zona-barra-verde {
+  background: linear-gradient(90deg, #047857 0%, #10b981 50%, #6ee7b7 100%);
+}
+.zona-barra-vermelho {
+  background: linear-gradient(90deg, #b91c1c 0%, #ef4444 55%, #fca5a5 100%);
+}
+
+/* — KPIs rodapé — */
+.cartao-kpis {
+  display: flex;
+  align-items: center;
+  background: var(--cor-fundo-alternativo);
+}
+.kpi-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 13px 8px;
+}
+.kpi-valor {
   font-family: var(--fonte-titulo);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.18em;
-  /* text-transform: uppercase; */
-  color: var(--azul-principal);
-  text-align: center;
-
-  margin-bottom: 18px;
-  padding: 10px 20px;
-
-  background-color: var(--cor-fundo-cartao);
-  border-radius: 15px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--azul-destaque);
+  line-height: 1;
 }
-.clientes-faixa {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.cliente-item {
+.kpi-rotulo {
   font-family: var(--fonte-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  color: var(--texto-branco);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--texto-claro);
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
 }
-.cliente-item::before { content: '▪'; font-size: 8px; color: var(--azul-principal); }
-.cliente-divisor {
-  font-size: 12px;
-  color: var(--texto-branco);
+.kpi-divisor {
+  width: 1px;
+  height: 28px;
+  background: var(--borda);
+  flex-shrink: 0;
 }
 
+/* ===== SEGMENTOS ATENDIDOS ===== */
+/*
+  REDESIGN v3.0
+  ─────────────────────────────────────────────────────────────────────────
+  ANTES: faixa horizontal com fundo gradiente azul-escuro, itens separados
+  por ♦︎, sem hierarquia, parecia rodapé de ticker.
+
+  DEPOIS: painel institucional com fundo --texto-escuro (#0F172A), layout
+  de duas colunas. Coluna esquerda ancora o posicionamento da empresa;
+  coluna direita exibe lista numerada dos 7 cargos com nível institucional.
+  
+  Justificativa de design:
+  • Fundo escuro cria ruptura visual intencional entre herói (claro) e sobre
+    (branco), funcionando como âncora cromática que lembra o profissional
+    de política que o NIE é uma empresa séria.
+  • Numeração editorial (01–07) hierarquiza a lista e comunica amplitude
+    de cobertura sem parecer verbose.
+  • Coluna ".cliente-nivel" (grayed) dá contexto institucional sem competir
+    com o cargo principal — visível em desktop, oculta em mobile para não
+    sobrecarregar telas pequenas.
+  ─────────────────────────────────────────────────────────────────────────
+*/
+#clientes {
+  background: var(--texto-escuro);
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+#clientes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.clientes-envolvente {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* Coluna esquerda */
+.clientes-intro-col {
+  padding-top: 8px;
+}
+.clientes-acento {
+  font-family: var(--fonte-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #60a5fa;           /* blue-400: legível sobre escuro, diferente do azul de ação */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.clientes-acento::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: #60a5fa;
+}
+.clientes-declaracao {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.08;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.clientes-descricao {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);  /* era 0.45 — ganho perceptível sem virar branco puro */
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 320px;
+  margin-bottom: 36px;
+}
+.clientes-indicador {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.clientes-indicador-numero {
+  font-family: var(--fonte-titulo);
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #60a5fa;              /* idem ao acento: azul claro legível */
+  line-height: 1;
+}
+.clientes-indicador-rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55); /* era 0.35 */
+  line-height: 1.4;
+}
+
+/* Coluna direita: lista numerada */
+.clientes-lista-col {
+  border-top: 1px solid rgba(255,255,255,0.14); /* era 0.08 */
+}
+.cliente-linha {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  transition: var(--transicao);
+  cursor: default;
+}
+.cliente-linha:hover {
+  border-bottom-color: #60a5fa;
+}
+.cliente-linha:hover .cliente-cargo {
+  color: #ffffff;
+}
+.cliente-num {
+  font-family: var(--fonte-mono);
+  font-size: 11px;
+  color: rgba(255,255,255,0.38); /* era 0.20 */
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+.cliente-cargo {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92); /* era 0.88 — quase branco puro */
+  transition: color 0.25s ease;
+}
+.cliente-nivel {
+  font-family: var(--fonte-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.48); /* era 0.25 */
+  text-transform: uppercase;
+  text-align: right;
+  white-space: nowrap;
+}
 
 /* ===== SOBRE ===== */
 #sobre {
@@ -622,13 +884,30 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transicao);
 }
 .valor-item:hover { background: var(--cor-fundo-alternativo); }
+
+/*
+  ÍCONE DOS VALORES:
+  Antes: div com emoji (font-size: 15px).
+  Agora: div com SVG inline, stroke-based, dimensões fixas.
+  A cor é herdada via currentColor a partir de color: var(--azul-destaque).
+*/
 .valor-icone {
-  width: 34px; height: 34px;
+  width: 34px;
+  height: 34px;
   background: var(--azul-gelo);
   border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px; margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--azul-destaque);
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
+.valor-icone svg {
+  width: 16px;
+  height: 16px;
+}
+
 .valor-nome { font-family: var(--fonte-titulo); font-size: 0.9rem; font-weight: 700; color: var(--texto-escuro); margin-bottom: 4px; }
 .valor-descricao { font-size: 0.78rem; color: var(--texto-secundario); line-height: 1.5; }
 
@@ -713,7 +992,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   transition: var(--transicao);
-
 }
 .grade-celula::before {
   content: '';
@@ -795,9 +1073,7 @@ h1, h2, h3, h4, h5, h6 {
 .servico-id { font-family: var(--fonte-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--azul-destaque); margin-bottom: 12px; }
 .servico-nome { font-family: var(--fonte-titulo); font-size: 0.95rem; font-weight: 700; color: var(--texto-escuro); margin-bottom: 10px; line-height: 1.3; }
 .servico-descricao { font-size: 0.82rem; color: var(--texto-secundario); line-height: 1.65; margin-bottom: 18px; }
-.servico-rodape {
-  padding-top: 14px; border-top: 1px solid var(--borda);
-}
+.servico-rodape { padding-top: 14px; border-top: 1px solid var(--borda); }
 .servico-prazo {
   font-family: var(--fonte-mono); font-size: 10px; color: var(--texto-claro);
   display: flex; align-items: center; gap: 6px;
@@ -944,12 +1220,29 @@ h1, h2, h3, h4, h5, h6 {
 .contato-informacoes > p { color: var(--texto-secundario); font-weight: 400; line-height: 1.75; margin-top: 16px; font-size: 1.05rem; }
 .contato-pontos { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
 .ponto-contato { display: flex; align-items: flex-start; gap: 14px; }
+
+/*
+  ÍCONE DOS PONTOS DE CONTATO:
+  Antes: div com emoji (🕒 🔒 📋 ✅).
+  Agora: div com SVG inline, stroke-based.
+  Mesmo sistema de .valor-icone — cor via currentColor.
+*/
 .ponto-icone {
-  width: 36px; height: 36px;
-  background: var(--azul-gelo); border-radius: var(--raio-borda);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--azul-gelo);
+  border-radius: var(--raio-borda);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--azul-destaque);
+  flex-shrink: 0;
 }
+.ponto-icone svg {
+  width: 18px;
+  height: 18px;
+}
+
 .ponto-titulo { font-family: var(--fonte-titulo); font-size: 0.88rem; font-weight: 700; color: var(--texto-escuro); margin-bottom: 2px; }
 .ponto-descricao { font-size: 0.8rem; color: var(--texto-secundario); line-height: 1.5; }
 
@@ -995,9 +1288,31 @@ h1, h2, h3, h4, h5, h6 {
 .campo-grupo.campo-invalido .campo-texto { border-color: #dc2626; }
 .campo-grupo.campo-invalido .campo-erro { display: block; }
 .botao-enviar { width: 100%; justify-content: center; margin-top: 4px; padding: 16px; font-size: 1rem; }
+
+/*
+  ESTADO DE SUCESSO DO FORMULÁRIO:
+  Antes: .sucesso-icone com font-size: 3rem contendo ✅.
+  Agora: container circular 64×64px com borda verde, SVG checkmark interno.
+  Resolve o problema de emojis renderizarem diferente por OS/navegador.
+*/
 .formulario-sucesso { display: none; text-align: center; padding: 40px 20px; }
 .formulario-sucesso.visivel { display: block; }
-.sucesso-icone { font-size: 3rem; margin-bottom: 14px; }
+.sucesso-icone {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(22, 163, 74, 0.10);
+  border: 2px solid rgba(22, 163, 74, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a34a;
+  margin-bottom: 18px;
+}
+.sucesso-icone svg {
+  width: 30px;
+  height: 30px;
+}
 .sucesso-titulo { font-family: var(--fonte-titulo); font-size: 1.4rem; font-weight: 700; color: var(--texto-escuro); margin-bottom: 8px; }
 .sucesso-texto { color: var(--texto-secundario); font-size: 0.88rem; }
 
@@ -1039,7 +1354,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== NOTIFICAÇÃO (TOAST) ===== */
 .notificacao {
-  position: fixed; bottom: 32px; right: 32px;
+  position: fixed; bottom: 100px; right: 32px;
   background: var(--cor-fundo-cartao);
   border: 1px solid var(--borda-azul);
   border-radius: var(--raio-borda); padding: 16px 20px;
@@ -1052,67 +1367,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .notificacao.visivel { transform: translateY(0); opacity: 1; }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 1024px) {
-  :root { --padding-secao: 80px 0; }
-  .heroi-conteudo { gap: 48px; }
-  .sobre-grade { gap: 48px; }
-  .grade-estrutura { grid-template-columns: repeat(2, 1fr); }
-  .pdca-grade { grid-template-columns: repeat(2, 1fr); }
-  .servico-cartoes { grid-template-columns: repeat(2, 1fr); }
-  .pacotes-grade { grid-template-columns: 1fr 1fr; }
-  .pacotes-grade .pacote-cartao:last-child { grid-column: 1 / -1; max-width: 400px; margin: 0 auto; width: 100%; }
-  .perfis-grade { grid-template-columns: repeat(2, 1fr); }
-  .rodape-grade { grid-template-columns: 1fr 1fr; }
-  .diferenciais-envolvente { grid-template-columns: 1fr; gap: 40px; }
-  .diferenciais-fixo { position: static; }
-  .retencao-tabela { grid-template-columns: 1fr 1fr; }
-  .retencao-cabecalho { grid-column: 1 / -1; }
-}
-
-@media (max-width: 768px) {
-  .nav-itens, .nav-chamada { display: none; }
-  .nav-menu-mobile { display: flex; }
-  .heroi-conteudo { grid-template-columns: 1fr; gap: 40px; }
-  .heroi-visual { display: none; }
-  .sobre-grade { grid-template-columns: 1fr; }
-  .sobre-valores { grid-template-columns: 1fr; }
-  .sobre-numeros { grid-template-columns: 1fr 1fr; }
-  .grade-estrutura { grid-template-columns: 1fr; }
-  .pdca-grade { grid-template-columns: 1fr 1fr; }
-  .servico-cartoes { grid-template-columns: 1fr; }
-  .pacotes-grade { grid-template-columns: 1fr; }
-  .pacotes-grade .pacote-cartao:last-child { grid-column: auto; max-width: none; }
-  .perfis-grade { grid-template-columns: 1fr; }
-  .contato-grade { grid-template-columns: 1fr; }
-  .formulario-linha { grid-template-columns: 1fr; }
-  .rodape-grade { grid-template-columns: 1fr 1fr; }
-  .diferenciais-linha { grid-template-columns: 1fr; }
-  .diferenciais-celula { border-right: none; }
-  .linha-cabecalho { display: none; }
-  .retencao-tabela { grid-template-columns: 1fr; }
-  .retencao-cabecalho { grid-column: auto; }
-}
-
-@media (max-width: 480px) {
-  .heroi-acoes { flex-direction: column; }
-  .pdca-grade { grid-template-columns: 1fr; }
-  .rodape-grade { grid-template-columns: 1fr; }
-  .sobre-numeros { grid-template-columns: 1fr; }
-  .rodape-base { flex-direction: column; align-items: flex-start; }
-}
-
-
-/* ============================================
-   NIE v2.1 — Adições: WhatsApp + Spinner
-   Adicione ao final do style.css existente
-   ============================================ */
-
-/* ===== BOTÃO WHATSAPP NA SEÇÃO DE CONTATO ===== */
-.whatsapp-contato-bloco {
-  margin-top: 32px;
-}
-
+/* ===== WHATSAPP ===== */
+.whatsapp-contato-bloco { margin-top: 32px; }
 .whatsapp-contato-divisor {
   display: flex;
   align-items: center;
@@ -1159,30 +1415,20 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(22, 163, 74, 0.38);
 }
-.botao-whatsapp-contato .whatsapp-icone {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-}
+.botao-whatsapp-contato .whatsapp-icone { width: 22px; height: 22px; flex-shrink: 0; }
 .botao-whatsapp-contato .whatsapp-seta {
   margin-left: auto;
   opacity: 0.7;
   font-size: 1.1rem;
   transition: var(--transicao);
 }
-.botao-whatsapp-contato:hover .whatsapp-seta {
-  transform: translateX(4px);
-  opacity: 1;
-}
+.botao-whatsapp-contato:hover .whatsapp-seta { transform: translateX(4px); opacity: 1; }
 
-/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
 .botao-whatsapp-flutuante {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
+  bottom: 32px; right: 32px;
   z-index: 9998;
-  width: 56px;
-  height: 56px;
+  width: 56px; height: 56px;
   background: #16a34a;
   color: #fff;
   border-radius: 50%;
@@ -1193,22 +1439,14 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transicao);
   text-decoration: none;
 }
-.botao-whatsapp-flutuante svg {
-  width: 28px;
-  height: 28px;
-}
+.botao-whatsapp-flutuante svg { width: 28px; height: 28px; }
 .botao-whatsapp-flutuante:hover {
   background: #15803d;
   transform: scale(1.12);
   box-shadow: 0 8px 32px rgba(22, 163, 74, 0.55);
 }
-.botao-whatsapp-flutuante:hover .flutuante-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
+.botao-whatsapp-flutuante:hover .flutuante-tooltip { opacity: 1; transform: translateX(0); pointer-events: auto; }
 
-/* Tooltip do botão flutuante */
 .flutuante-tooltip {
   position: absolute;
   right: calc(100% + 12px);
@@ -1236,41 +1474,77 @@ h1, h2, h3, h4, h5, h6 {
   border-left-color: var(--texto-escuro);
 }
 
-/* Ajuste: notificação (toast) fica acima do botão flutuante */
-.notificacao {
-  bottom: 100px !important;
-}
-
 /* ===== SPINNER NO BOTÃO DE ENVIO ===== */
 .spinner-envio {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 16px; height: 16px;
   border: 2px solid rgba(255, 255, 255, 0.35);
   border-top-color: #fff;
   border-radius: 50%;
   animation: girar 0.7s linear infinite;
   flex-shrink: 0;
 }
-@keyframes girar {
-  to { transform: rotate(360deg); }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  :root { --padding-secao: 80px 0; }
+  .heroi-conteudo { gap: 48px; }
+  .sobre-grade { gap: 48px; }
+  .grade-estrutura { grid-template-columns: repeat(2, 1fr); }
+  .pdca-grade { grid-template-columns: repeat(2, 1fr); }
+  .servico-cartoes { grid-template-columns: repeat(2, 1fr); }
+  .pacotes-grade { grid-template-columns: 1fr 1fr; }
+  .pacotes-grade .pacote-cartao:last-child { grid-column: 1 / -1; max-width: 400px; margin: 0 auto; width: 100%; }
+  .perfis-grade { grid-template-columns: repeat(2, 1fr); }
+  .rodape-grade { grid-template-columns: 1fr 1fr; }
+  .diferenciais-envolvente { grid-template-columns: 1fr; gap: 40px; }
+  .diferenciais-fixo { position: static; }
+  .retencao-tabela { grid-template-columns: 1fr 1fr; }
+  .retencao-cabecalho { grid-column: 1 / -1; }
+  .clientes-envolvente { grid-template-columns: 1fr; gap: 40px; }
+  .clientes-intro-col { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
+  .clientes-declaracao { font-size: 1.8rem; }
 }
 
-/* ===== RESPONSIVIDADE WHATSAPP ===== */
 @media (max-width: 768px) {
-  .botao-whatsapp-flutuante {
-    bottom: 24px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
-  }
-  .botao-whatsapp-flutuante svg {
-    width: 26px;
-    height: 26px;
-  }
+  .nav-itens, .nav-chamada { display: none; }
+  .nav-menu-mobile { display: flex; }
+  .heroi-conteudo { grid-template-columns: 1fr; gap: 40px; }
+  .heroi-visual { display: none; }
+  .sobre-grade { grid-template-columns: 1fr; }
+  .sobre-valores { grid-template-columns: 1fr; }
+  .sobre-numeros { grid-template-columns: 1fr 1fr; }
+  .grade-estrutura { grid-template-columns: 1fr; }
+  .pdca-grade { grid-template-columns: 1fr 1fr; }
+  .servico-cartoes { grid-template-columns: 1fr; }
+  .pacotes-grade { grid-template-columns: 1fr; }
+  .pacotes-grade .pacote-cartao:last-child { grid-column: auto; max-width: none; }
+  .perfis-grade { grid-template-columns: 1fr; }
+  .contato-grade { grid-template-columns: 1fr; }
+  .formulario-linha { grid-template-columns: 1fr; }
+  .rodape-grade { grid-template-columns: 1fr 1fr; }
+  .diferenciais-linha { grid-template-columns: 1fr; }
+  .diferenciais-celula { border-right: none; }
+  .linha-cabecalho { display: none; }
+  .retencao-tabela { grid-template-columns: 1fr; }
+  .retencao-cabecalho { grid-column: auto; }
+
+  /* Clientes: oculta coluna institucional em telas pequenas */
+  .cliente-nivel { display: none; }
+  .cliente-linha { grid-template-columns: 36px 1fr; }
+  .clientes-intro-col { flex-direction: column; gap: 20px; }
+
+  .botao-whatsapp-flutuante { bottom: 24px; right: 20px; width: 52px; height: 52px; }
+  .botao-whatsapp-flutuante svg { width: 26px; height: 26px; }
   .flutuante-tooltip { display: none; }
-  .notificacao {
-    bottom: 88px !important;
-    right: 16px;
-  }
+  .notificacao { bottom: 88px !important; right: 16px; }
+}
+
+@media (max-width: 480px) {
+  .heroi-acoes { flex-direction: column; }
+  .pdca-grade { grid-template-columns: 1fr; }
+  .rodape-grade { grid-template-columns: 1fr; }
+  .sobre-numeros { grid-template-columns: 1fr; }
+  .rodape-base { flex-direction: column; align-items: flex-start; }
 }

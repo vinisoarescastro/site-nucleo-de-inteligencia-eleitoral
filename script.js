@@ -1,38 +1,15 @@
 /* ============================================
    NIE · Núcleo de Inteligência Eleitoral
-   JavaScript v2.1 — com EmailJS + CallMeBot
+   JavaScript v2.2 — com EmailJS + CallMeBot
    ============================================ */
 'use strict';
 
-/* ============================================
-   CONFIGURAÇÕES — PREENCHA ANTES DE PUBLICAR
-   ============================================
-   
-   1. EMAILJS
-      → Acesse: https://www.emailjs.com
-      → Crie conta gratuita
-      → Conecte seu Gmail (Email Services → Add New Service)
-      → Crie um template (Email Templates → Create New Template)
-        Use as variáveis: {{from_name}}, {{from_email}}, {{phone}},
-        {{cargo}}, {{estado}}, {{produto}}, {{message}}
-      → Copie: Public Key, Service ID e Template ID
-
-   2. CALLMEBOT (WhatsApp)
-      → No WhatsApp, adicione o contato: +34 644 60 49 23
-      → Envie a mensagem: "I allow callmebot to send me messages"
-      → Você receberá uma API key
-      → Preencha CALLMEBOT_PHONE com seu número completo (ex: 5561999999999)
-
-   3. WHATSAPP DIRETO (botão)
-      → Preencha WHATSAPP_NUMERO com seu número (ex: 5561999999999)
-   ============================================ */
-
-const EMAILJS_PUBLIC_KEY  = 'NU6kVmZR88bXo7roX';        // ex: 'aBcDeFgHiJ...'
-const EMAILJS_SERVICE_ID  = 'service_zf34jew';          // ex: 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'template_1xd5byr';         // ex: 'template_xyz789'
-const CALLMEBOT_PHONE     = '5562999504750';            // ex: '5561999999999'
-const CALLMEBOT_APIKEY    = '1512332';                  // ex: '123456'
-const WHATSAPP_NUMERO     = '5562999504750';            // ex: '5561999999999'
+const EMAILJS_PUBLIC_KEY  = 'NU6kVmZR88bXo7roX';
+const EMAILJS_SERVICE_ID  = 'service_zf34jew';
+const EMAILJS_TEMPLATE_ID = 'template_1xd5byr';
+const CALLMEBOT_PHONE     = '5562999504750';
+const CALLMEBOT_APIKEY    = '1512332';
+const WHATSAPP_NUMERO     = '5562999504750';
 
 /* ===== INICIALIZAÇÃO DO EMAILJS ===== */
 (function inicializarEmailJS() {
@@ -71,11 +48,22 @@ document.querySelectorAll('.nav-menu-expandido a').forEach(link => {
   });
 });
 
-/* ===== ROLAGEM SUAVE PARA ANCORAS ===== */
+/* ===== ROLAGEM SUAVE PARA ÂNCORAS =====
+   CORREÇÃO v2.2:
+   O seletor 'a[href^="#"]' captura os botões WhatsApp no momento do
+   registro (href="#"), mas o DOMContentLoaded os troca para wa.me/.
+   Sem a guarda abaixo, o handler chamava preventDefault() no clique
+   dos botões WhatsApp, bloqueando a navegação.
+   Solução: verificar getAttribute('href') NO MOMENTO do clique —
+   se não começar com '#', o handler ignora e deixa o browser navegar.
+*/
 document.querySelectorAll('a[href^="#"]').forEach(ancora => {
   ancora.addEventListener('click', evento => {
     const href = ancora.getAttribute('href');
-    if (!href || href === '#') return; // ignora âncoras vazias
+
+    // Ignora: href vazio, âncora raiz, ou qualquer URL externa (ex: wa.me)
+    if (!href || href === '#' || !href.startsWith('#')) return;
+
     evento.preventDefault();
     const alvo = document.querySelector(href);
     if (alvo) {
@@ -98,7 +86,12 @@ document.querySelectorAll('.revelar').forEach(elemento => observadorReveal.obser
 const observadorBarras = new IntersectionObserver((entradas) => {
   entradas.forEach(entrada => {
     if (entrada.isIntersecting) {
+      /* barras antigas (classe preenchimento-territorio) */
       entrada.target.querySelectorAll('.preenchimento-territorio').forEach(barra => {
+        barra.style.width = barra.dataset.largura;
+      });
+      /* barras novas do cartão herói (classe zona-barra-fill) */
+      entrada.target.querySelectorAll('.zona-barra-fill').forEach(barra => {
         barra.style.width = barra.dataset.largura;
       });
       observadorBarras.unobserve(entrada.target);
@@ -106,7 +99,7 @@ const observadorBarras = new IntersectionObserver((entradas) => {
   });
 }, { threshold: 0.3 });
 
-document.querySelectorAll('.barras-territorio').forEach(elemento => observadorBarras.observe(elemento));
+document.querySelectorAll('.barras-territorio, .cartao-linhas-zona').forEach(elemento => observadorBarras.observe(elemento));
 
 /* ===== ANIMACAO DE CONTADORES ===== */
 function animarContador(elemento, valorAlvo, duracao) {
@@ -198,7 +191,6 @@ if (formulario) {
     botaoEnviar.innerHTML = '<span class="spinner-envio"></span> Enviando...';
     botaoEnviar.disabled  = true;
 
-    /* — Coleta dos dados — */
     var dados = {
       from_name : document.getElementById('nome').value.trim(),
       from_email: document.getElementById('email').value.trim(),
@@ -210,10 +202,8 @@ if (formulario) {
     };
 
     try {
-      /* ── 1. Envio do e-mail via EmailJS ── */
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, dados);
 
-      /* ── 2. Notificação no WhatsApp via CallMeBot ── */
       var textoWA =
         '🗳️ *Novo Lead NIE*\n\n' +
         '👤 Nome: ' + dados.from_name + '\n' +
@@ -230,12 +220,10 @@ if (formulario) {
         '&text='   + encodeURIComponent(textoWA) +
         '&apikey=' + CALLMEBOT_APIKEY;
 
-      /* Dispara sem aguardar (não bloqueia o fluxo em caso de falha no CallMeBot) */
       fetch(urlCallMeBot).catch(function() {
         console.warn('NIE: CallMeBot não disponível. E-mail foi enviado normalmente.');
       });
 
-      /* ── 3. Exibe sucesso ── */
       formularioConteudo.style.display = 'none';
       formularioResultado.classList.add('visivel');
       exibirNotificacao('Mensagem enviada com sucesso!');
