@@ -1,9 +1,4 @@
-# ============================================================
-# NIE · Núcleo de Dados — .gitignore
-# Gerado para: Static Site (HTML/CSS/JS) + Node.js tooling
-# ============================================================
-
-# ─── Variáveis de ambiente e segredos ───────────────────────
+# variaveis do ambiente e segredo
 .env
 .env.local
 .env.development
@@ -13,7 +8,7 @@
 *.key
 secrets.json
 
-# ─── Dependências ───────────────────────────────────────────
+# dependencias
 node_modules/
 bower_components/
 .pnp
@@ -22,7 +17,7 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# ─── Build e distribuição ───────────────────────────────────
+# build e distribuição
 dist/
 build/
 out/
@@ -31,7 +26,7 @@ out/
 *.min.css
 *.bundle.js
 
-# ─── Cache de ferramentas ───────────────────────────────────
+# caches de ferramentas
 .cache/
 .parcel-cache/
 .vite/
@@ -40,7 +35,7 @@ out/
 .prettiercache
 .turbo/
 
-# ─── Editores e IDEs ────────────────────────────────────────
+# editores e ides
 .vscode/
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -53,7 +48,7 @@ out/
 *.swp
 *~
 
-# ─── Sistema operacional ────────────────────────────────────
+# sistema operacional
 .DS_Store
 .DS_Store?
 ._*
@@ -63,7 +58,7 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# ─── Logs ───────────────────────────────────────────────────
+# logs
 logs/
 *.log
 npm-debug.log*
@@ -71,7 +66,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# ─── Testes e cobertura ─────────────────────────────────────
+# testes e coberturas
 coverage/
 .nyc_output/
 test-results/
@@ -79,23 +74,23 @@ playwright-report/
 cypress/videos/
 cypress/screenshots/
 
-# ─── Assets gerados/temporários ─────────────────────────────
+# asssets gerados e temporarios
 src/assets/images/thumbs/
 *.tmp
 *.temp
 *.bak
 *.orig
 
-# ─── Documentação gerada ────────────────────────────────────
+# documentacao gerada
 docs/_site/
 docs/.jekyll-cache/
 
-# ─── Deployment ─────────────────────────────────────────────
+# deployment 
 .netlify/
 .vercel/
 .firebase/
 firebase-debug.log
 
-# ─── Análise de bundle ──────────────────────────────────────
+# analise de budle
 stats.json
 bundle-analyzer-report.html
