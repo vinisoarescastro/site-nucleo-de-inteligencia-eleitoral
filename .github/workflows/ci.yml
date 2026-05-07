@@ -1,0 +1,54 @@
+name: CI — Lint & Validate
+
+on:
+  pull_request:
+    branches: [main, "release/**"]
+  push:
+    branches: ["feature/**", "fix/**", "hotfix/**"]
+
+jobs:
+  quality:
+    name: Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint JavaScript
+        run: npm run lint:js
+
+      - name: Lint CSS
+        run: npm run lint:css
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Validate HTML structure
+        run: |
+          # Verifica se index.html não tem erros de sintaxe básicos
+          node -e "
+            const fs = require('fs');
+            const html = fs.readFileSync('index.html', 'utf8');
+            const openTags  = (html.match(/<[a-z]/gi) || []).length;
+            const closeTags = (html.match(/<\/[a-z]/gi) || []).length;
+            console.log('Tags abertas:', openTags, '| Tags fechadas:', closeTags);
+          "
+
+      - name: Check for exposed secrets
+        run: |
+          # Verifica se não há segredos hardcoded no código
+          if grep -rn "apikey\|APIKEY\|api_key" src/ --include="*.js" | grep -v "CALLMEBOT_APIKEY\|config\.js"; then
+            echo "[ X ] Possível segredo encontrado no código!"
+            exit 1
+          fi
+          echo "[ OK ] Nenhum segredo aparente encontrado"

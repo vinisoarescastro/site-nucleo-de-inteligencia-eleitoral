@@ -1,0 +1,33 @@
+{
+  "name": "nie-nucleo-dados",
+  "version": "1.0.0",
+  "description": "NIE · Núcleo de Dados — Plataforma institucional de inteligência eleitoral",
+  "author": "Vinicius Soares Castro <contato@nie.com.br>",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "live-server --port=3000 --host=localhost --open=/index.html --ignore=node_modules,dist,.git",
+    "build": "node scripts/build.js",
+    "lint:js": "eslint \"src/js/**/*.js\" \"scripts/**/*.js\" --fix",
+    "lint:css": "stylelint \"src/css/**/*.css\" --fix",
+    "lint": "npm run lint:js && npm run lint:css",
+    "format": "prettier --write \"src/**/*.{js,css,html}\" \"*.{js,json,md,toml}\"",
+    "format:check": "prettier --check \"src/**/*.{js,css,html}\" \"*.{js,json,md,toml}\"",
+    "validate:env": "node scripts/validate-env.js",
+    "inject:config": "node scripts/inject-config.js",
+    "check": "npm run lint && npm run format:check && npm run validate:env",
+    "precommit": "npm run check"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.3.2",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

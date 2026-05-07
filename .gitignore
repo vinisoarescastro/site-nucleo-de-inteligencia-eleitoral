@@ -1,0 +1,101 @@
+# ============================================================
+# NIE · Núcleo de Dados — .gitignore
+# Gerado para: Static Site (HTML/CSS/JS) + Node.js tooling
+# ============================================================
+
+# ─── Variáveis de ambiente e segredos ───────────────────────
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
+*.pem
+*.key
+secrets.json
+
+# ─── Dependências ───────────────────────────────────────────
+node_modules/
+bower_components/
+.pnp
+.pnp.js
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ─── Build e distribuição ───────────────────────────────────
+dist/
+build/
+out/
+.output/
+*.min.js
+*.min.css
+*.bundle.js
+
+# ─── Cache de ferramentas ───────────────────────────────────
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+.stylelintcache
+.prettiercache
+.turbo/
+
+# ─── Editores e IDEs ────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*~
+
+# ─── Sistema operacional ────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Logs ───────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ─── Testes e cobertura ─────────────────────────────────────
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+cypress/videos/
+cypress/screenshots/
+
+# ─── Assets gerados/temporários ─────────────────────────────
+src/assets/images/thumbs/
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# ─── Documentação gerada ────────────────────────────────────
+docs/_site/
+docs/.jekyll-cache/
+
+# ─── Deployment ─────────────────────────────────────────────
+.netlify/
+.vercel/
+.firebase/
+firebase-debug.log
+
+# ─── Análise de bundle ──────────────────────────────────────
+stats.json
+bundle-analyzer-report.html

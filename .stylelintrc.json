@@ -1,0 +1,17 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "keyframes-name-pattern": null,
+    "alpha-value-notation": "number",
+    "color-function-notation": "legacy",
+    "import-notation": "string",
+    "declaration-block-no-duplicate-properties": true,
+    "no-duplicate-selectors": true,
+    "font-family-no-duplicate-names": true,
+    "comment-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "at-rule-empty-line-before": null
+  }
+}

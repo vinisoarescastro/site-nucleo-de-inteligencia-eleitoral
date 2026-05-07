@@ -1,0 +1,92 @@
+# ============================================================
+# NIE · Núcleo de Dados — netlify.toml
+# Configuração de build, deploy e headers HTTP de segurança
+# ============================================================
+
+# ─── Build ───────────────────────────────────────────────────
+[build]
+  # Comando de build (copia src para dist com substituição de variáveis)
+  command   = "npm run build"
+  # Diretório publicado
+  publish   = "dist/"
+  # Variáveis de ambiente obrigatórias (falha o build se ausentes)
+  # (configure os valores no painel Netlify → Site Settings → Env Vars)
+
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_ENV     = "production"
+
+# ─── Contextos de deploy ─────────────────────────────────────
+[context.production]
+  command = "npm run build"
+
+[context.staging]
+  command = "npm run build"
+  [context.staging.environment]
+    NODE_ENV = "staging"
+
+[context.deploy-preview]
+  command = "npm run build"
+  [context.deploy-preview.environment]
+    NODE_ENV = "development"
+
+# ─── Redirects ───────────────────────────────────────────────
+# Força HTTPS
+[[redirects]]
+  from   = "http://nie.com.br/*"
+  to     = "https://nie.com.br/:splat"
+  status = 301
+  force  = true
+
+# Redireciona www para apex
+[[redirects]]
+  from   = "https://www.nie.com.br/*"
+  to     = "https://nie.com.br/:splat"
+  status = 301
+  force  = true
+
+# ─── Headers de segurança ────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Impede clickjacking
+    X-Frame-Options = "DENY"
+    # Impede MIME sniffing
+    X-Content-Type-Options = "nosniff"
+    # Força HTTPS por 1 ano, inclui subdomínios
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Controla informações de referência
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Restringe acesso a APIs do navegador
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    # Content Security Policy
+    # Permite: self + CDN EmailJS + Google Fonts + CallMeBot
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' https://cdn.jsdelivr.net;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data:;
+      connect-src 'self' https://api.emailjs.com https://api.callmebot.com;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self'
+    """
+
+# Cache agressivo para assets com hash (JS/CSS)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache moderado para HTML (revalidação a cada visita)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Cache moderado para SVG
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
