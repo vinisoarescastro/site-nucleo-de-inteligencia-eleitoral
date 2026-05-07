@@ -1,3 +1,4 @@
+# gitignore
 # variaveis do ambiente e segredo
 .env
 .env.local
